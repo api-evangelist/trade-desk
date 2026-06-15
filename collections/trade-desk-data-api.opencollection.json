@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TTD Data API",
+    "version": "v0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Advertiser",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload first-party data for the specified ID for use in audience targeting.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/data/advertiser",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload first-party data for the specified ID for use in audience targeting."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ThirdParty",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload third-party data for the specified data provider for use in audience targeting.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/data/thirdparty",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload third-party data for the specified data provider for use in audience targeting."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OfflineConversion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload offline conversion data for the specified data provider.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/providerapi/offlineconversion",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload offline conversion data for the specified data provider."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "DeletionOptOut",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete IDs shared with The Trade Desk for the specified advertiser ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/data/deletion-optout/advertiser",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete IDs shared with The Trade Desk for the specified advertiser ID."
+        },
+        {
+          "info": {
+            "name": "Delete IDs shared with The Trade Desk via a product catalog for the specified merchant ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/data/deletion-optout/merchant",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete IDs shared with The Trade Desk via a product catalog for the specified merchant ID."
+        },
+        {
+          "info": {
+            "name": "Delete IDs shared with The Trade Desk for the specified data provider ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/data/deletion-optout/thirdparty",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete IDs shared with The Trade Desk for the specified data provider ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -27,260 +27,262 @@ position: Provider
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Advertising
-  - Programmatic Advertising
-  - Demand-Side Platform
-  - DSP
-  - AdTech
-  - Connected TV
-  - CTV
-  - Identity
-  - Unified ID 2.0
-  - UID2
-  - OpenPath
-  - Kokai
-  - Koa AI
-  - Galileo
-  - Sincera
-  - Open Internet
-  - Real-Time Bidding
-  - Open Measurement
+- Advertising
+- Programmatic Advertising
+- Demand-Side Platform
+- DSP
+- AdTech
+- Connected TV
+- CTV
+- Identity
+- Unified ID 2.0
+- UID2
+- OpenPath
+- Kokai
+- Koa AI
+- Galileo
+- Sincera
+- Open Internet
+- Real-Time Bidding
+- Open Measurement
 url: https://raw.githubusercontent.com/api-evangelist/trade-desk/refs/heads/main/apis.yml
 created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-  - aid: trade-desk:trade-desk-data-api
-    name: The Trade Desk Data API
-    tags:
-      - Advertising
-      - Data
-      - Audience
-      - Conversions
-      - Privacy
-    humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
-    properties:
-      - url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
-        type: Documentation
-      - url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
-        type: Documentation
-      - url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
-        type: Documentation
-      - url: openapi/trade-desk-data-api-openapi.yml
-        type: OpenAPI
-      - url: https://github.com/TheTradeDesk/ttd-data-python
-        type: SDK
-        name: Python SDK
-    description: >-
-      Ingest first-party advertiser audience data, third-party provider
-      audience data, and offline conversions (CAPI-style), and submit
-      data-subject deletion / opt-out requests across advertiser, merchant,
-      and provider contexts. The Data API powers audience targeting and
-      offline-to-online measurement and supports UID2 identity mapping.
-  - aid: trade-desk:trade-desk-workflows-api
-    name: The Trade Desk Workflows API
-    tags:
-      - Advertising
-      - Campaigns
-      - Ad Groups
-      - GraphQL
-      - REST
-    humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
-    properties:
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
-        type: Documentation
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
-        type: GettingStarted
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
-        type: Documentation
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
-        type: Documentation
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
-        type: Documentation
-      - url: https://api.thetradedesk.com/workflows/swagger/v1/swagger.yaml
-        type: OpenAPI
-        name: Workflows Swagger (auth-required)
-      - url: https://github.com/TheTradeDesk/ttd-workflows-python
-        type: SDK
-        name: Python SDK
-      - url: https://github.com/TheTradeDesk/ttd-workflows-go
-        type: SDK
-        name: Go SDK
-      - url: https://github.com/TheTradeDesk/ttd-workflows-java
-        type: SDK
-        name: Java SDK
-    description: >-
-      The Workflows API exposes the high-level campaign, ad group, creative,
-      and bulk-job operations that previously required navigating the legacy
-      Platform API. It blends REST and GraphQL surfaces (including a generic
-      GraphQL passthrough and bulk query jobs) and is the recommended modern
-      integration path for new partners.
-  - aid: trade-desk:trade-desk-platform-api
-    name: The Trade Desk Platform API
-    tags:
-      - Advertising
-      - Campaigns
-      - REST
-      - Reporting
-    humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
-    properties:
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
-        type: Documentation
-      - url: https://partner.thetradedesk.com/v3/portal/api/overview
-        type: Documentation
-      - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
-        type: Documentation
-      - url: https://github.com/TheTradeDesk/Platform
-        type: CodeExamples
-        name: TheTradeDesk/Platform helper scripts
-    description: >-
-      The original REST Platform API covering advertisers, campaigns, ad
-      groups, creatives, targeting data, reporting, and audience operations.
-      Documentation is gated behind the TTD Partner Portal. New integrations
-      are generally steered to the Workflows API; Platform remains the
-      reference for low-level objects and reporting endpoints.
-  - aid: trade-desk:trade-desk-realtime-conversion-events-api
-    name: The Trade Desk Real-Time Conversion Events API
-    tags:
-      - Advertising
-      - Conversions
-      - Measurement
-      - Server-Side
-    humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
-    properties:
-      - url: https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager
-        type: SDK
-        name: GTM Client-Side Template
-      - url: https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager
-        type: SDK
-        name: GTM Server-Side Template
-    description: >-
-      Server-side and client-side conversion event ingestion (Apache 2.0
-      Google Tag Manager templates) for capturing high-fidelity attribution
-      signals in a cookie-deprecated environment. Pairs with UID2 for
-      identity resolution.
-  - aid: trade-desk:trade-desk-uid2-api
-    name: Unified ID 2.0 (UID2)
-    tags:
-      - Identity
-      - Privacy
-      - Open Source
-      - IAB Tech Lab
-    humanURL: https://unifiedid.com
-    properties:
-      - url: https://unifiedid.com
-        type: Portal
-      - url: https://unifiedid.com/docs/intro
-        type: Documentation
-      - url: https://github.com/IABTechLab/uid2docs
-        type: Documentation
-        name: UID2 Documentation Repository
-      - url: https://github.com/IABTechLab/uid2-operator
-        type: SDK
-        name: UID2 Operator Reference Implementation
-    description: >-
-      Unified ID 2.0 is an open-source, deterministic identity framework
-      seeded by The Trade Desk and now governed by the IAB Tech Lab. UID2
-      resolves hashed email addresses and phone numbers into rotating
-      tokens that publishers, DSPs, SSPs, and measurement vendors can use
-      for addressable advertising without third-party cookies. The EUID
-      variant provides a GDPR-aligned European deployment.
-  - aid: trade-desk:trade-desk-opensincera-api
-    name: OpenSincera API
-    tags:
-      - Advertising
-      - Data Quality
-      - Supply Path
-      - Transparency
-    humanURL: https://partner.thetradedesk.com/v3/portal/opensincera/overview
-    properties:
-      - url: https://partner.thetradedesk.com/v3/portal/opensincera/overview
-        type: Documentation
-    description: >-
-      OpenSincera (from the May 2024 Sincera acquisition) provides
-      programmatic supply-side transparency data — ad slot quality, page
-      attributes, viewability metadata, supply-path metrics — to help
-      buyers value impressions and audit inventory.
+- aid: trade-desk:trade-desk-data-api
+  name: The Trade Desk Data API
+  tags:
+  - Advertising
+  - Data
+  - Audience
+  - Conversions
+  - Privacy
+  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  properties:
+  - url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+    type: Documentation
+  - url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+    type: Documentation
+  - url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+    type: Documentation
+  - url: openapi/trade-desk-data-api-openapi.yml
+    type: OpenAPI
+  - url: https://github.com/TheTradeDesk/ttd-data-python
+    type: SDK
+    name: Python SDK
+  description: >-
+    Ingest first-party advertiser audience data, third-party provider
+    audience data, and offline conversions (CAPI-style), and submit
+    data-subject deletion / opt-out requests across advertiser, merchant,
+    and provider contexts. The Data API powers audience targeting and
+    offline-to-online measurement and supports UID2 identity mapping.
+- aid: trade-desk:trade-desk-workflows-api
+  name: The Trade Desk Workflows API
+  tags:
+  - Advertising
+  - Campaigns
+  - Ad Groups
+  - GraphQL
+  - REST
+  humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  properties:
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+    type: Documentation
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
+    type: GettingStarted
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+    type: Documentation
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
+    type: Documentation
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
+    type: Documentation
+  - url: https://api.thetradedesk.com/workflows/swagger/v1/swagger.yaml
+    type: OpenAPI
+    name: Workflows Swagger (auth-required)
+  - url: https://github.com/TheTradeDesk/ttd-workflows-python
+    type: SDK
+    name: Python SDK
+  - url: https://github.com/TheTradeDesk/ttd-workflows-go
+    type: SDK
+    name: Go SDK
+  - url: https://github.com/TheTradeDesk/ttd-workflows-java
+    type: SDK
+    name: Java SDK
+  - url: graphql/trade-desk-graphql.md
+    type: GraphQL
+  description: >-
+    The Workflows API exposes the high-level campaign, ad group, creative,
+    and bulk-job operations that previously required navigating the legacy
+    Platform API. It blends REST and GraphQL surfaces (including a generic
+    GraphQL passthrough and bulk query jobs) and is the recommended modern
+    integration path for new partners.
+- aid: trade-desk:trade-desk-platform-api
+  name: The Trade Desk Platform API
+  tags:
+  - Advertising
+  - Campaigns
+  - REST
+  - Reporting
+  humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  properties:
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+    type: Documentation
+  - url: https://partner.thetradedesk.com/v3/portal/api/overview
+    type: Documentation
+  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
+    type: Documentation
+  - url: https://github.com/TheTradeDesk/Platform
+    type: CodeExamples
+    name: TheTradeDesk/Platform helper scripts
+  description: >-
+    The original REST Platform API covering advertisers, campaigns, ad
+    groups, creatives, targeting data, reporting, and audience operations.
+    Documentation is gated behind the TTD Partner Portal. New integrations
+    are generally steered to the Workflows API; Platform remains the
+    reference for low-level objects and reporting endpoints.
+- aid: trade-desk:trade-desk-realtime-conversion-events-api
+  name: The Trade Desk Real-Time Conversion Events API
+  tags:
+  - Advertising
+  - Conversions
+  - Measurement
+  - Server-Side
+  humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  properties:
+  - url: https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager
+    type: SDK
+    name: GTM Client-Side Template
+  - url: https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager
+    type: SDK
+    name: GTM Server-Side Template
+  description: >-
+    Server-side and client-side conversion event ingestion (Apache 2.0
+    Google Tag Manager templates) for capturing high-fidelity attribution
+    signals in a cookie-deprecated environment. Pairs with UID2 for
+    identity resolution.
+- aid: trade-desk:trade-desk-uid2-api
+  name: Unified ID 2.0 (UID2)
+  tags:
+  - Identity
+  - Privacy
+  - Open Source
+  - IAB Tech Lab
+  humanURL: https://unifiedid.com
+  properties:
+  - url: https://unifiedid.com
+    type: Portal
+  - url: https://unifiedid.com/docs/intro
+    type: Documentation
+  - url: https://github.com/IABTechLab/uid2docs
+    type: Documentation
+    name: UID2 Documentation Repository
+  - url: https://github.com/IABTechLab/uid2-operator
+    type: SDK
+    name: UID2 Operator Reference Implementation
+  description: >-
+    Unified ID 2.0 is an open-source, deterministic identity framework
+    seeded by The Trade Desk and now governed by the IAB Tech Lab. UID2
+    resolves hashed email addresses and phone numbers into rotating
+    tokens that publishers, DSPs, SSPs, and measurement vendors can use
+    for addressable advertising without third-party cookies. The EUID
+    variant provides a GDPR-aligned European deployment.
+- aid: trade-desk:trade-desk-opensincera-api
+  name: OpenSincera API
+  tags:
+  - Advertising
+  - Data Quality
+  - Supply Path
+  - Transparency
+  humanURL: https://partner.thetradedesk.com/v3/portal/opensincera/overview
+  properties:
+  - url: https://partner.thetradedesk.com/v3/portal/opensincera/overview
+    type: Documentation
+  description: >-
+    OpenSincera (from the May 2024 Sincera acquisition) provides
+    programmatic supply-side transparency data — ad slot quality, page
+    attributes, viewability metadata, supply-path metrics — to help
+    buyers value impressions and audit inventory.
 common:
-  - type: Website
-    url: https://www.thetradedesk.com
-  - type: Portal
-    url: https://www.thetradedesk.com/us
-  - type: Documentation
-    url: https://open.thetradedesk.com
-  - type: Documentation
-    url: https://partner.thetradedesk.com
-    name: TTD Partner Portal (auth)
-  - type: GettingStarted
-    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
-  - type: Product
-    url: https://www.thetradedesk.com/us/our-platform
-    name: Our Platform (Kokai)
-  - type: Product
-    url: https://www.thetradedesk.com/us/our-platform/dsp-demand-side-platform
-    name: DSP
-  - type: Product
-    url: https://www.thetradedesk.com/us/openpath
-    name: OpenPath
-  - type: Product
-    url: https://www.thetradedesk.com/us/our-platform/koa-ai-artificial-intelligence
-    name: Koa AI
-  - type: Product
-    url: https://www.thetradedesk.com/us/news/introducing-galileo
-    name: Galileo
-  - type: Identity
-    url: https://unifiedid.com
-    name: Unified ID 2.0
-  - type: Identity
-    url: https://euid.eu
-    name: EUID
-  - type: GitHubOrganization
-    url: https://github.com/TheTradeDesk
-  - type: GitHubOrganization
-    url: https://github.com/IABTechLab
-    name: IAB Tech Lab (UID2 governance)
-  - type: SDK
-    url: https://github.com/TheTradeDesk/ttd-workflows-python
-    name: Workflows Python SDK
-  - type: SDK
-    url: https://github.com/TheTradeDesk/ttd-workflows-go
-    name: Workflows Go SDK
-  - type: SDK
-    url: https://github.com/TheTradeDesk/ttd-workflows-java
-    name: Workflows Java SDK
-  - type: SDK
-    url: https://github.com/TheTradeDesk/ttd-data-python
-    name: Data API Python SDK
-  - type: SDK
-    url: https://github.com/TheTradeDesk/ttd-databricks-python
-    name: TTD Databricks Python
-  - type: CodeExamples
-    url: https://github.com/TheTradeDesk/Platform
-    name: Platform helper scripts
-  - type: PressRoom
-    url: https://www.thetradedesk.com/us/news
-  - type: Blog
-    url: https://www.thetradedesk.com/us/news-insights
-  - type: Newsroom
-    url: https://www.thetradedesk.com/us/press-room
-  - type: AboutUs
-    url: https://www.thetradedesk.com/us/about-us
-  - type: Careers
-    url: https://careers.thetradedesk.com
-  - type: InvestorRelations
-    url: https://investors.thetradedesk.com
-  - type: TermsOfService
-    url: https://www.thetradedesk.com/us/website-privacy-policy
-  - type: PrivacyPolicy
-    url: https://www.thetradedesk.com/us/website-privacy-policy
-  - type: Contact
-    url: https://www.thetradedesk.com/us/contact-us
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/the-trade-desk
-  - type: Twitter
-    url: https://twitter.com/thetradedesk
-  - type: YouTube
-    url: https://www.youtube.com/@thetradedesk
+- type: Website
+  url: https://www.thetradedesk.com
+- type: Portal
+  url: https://www.thetradedesk.com/us
+- type: Documentation
+  url: https://open.thetradedesk.com
+- type: Documentation
+  url: https://partner.thetradedesk.com
+  name: TTD Partner Portal (auth)
+- type: GettingStarted
+  url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
+- type: Product
+  url: https://www.thetradedesk.com/us/our-platform
+  name: Our Platform (Kokai)
+- type: Product
+  url: https://www.thetradedesk.com/us/our-platform/dsp-demand-side-platform
+  name: DSP
+- type: Product
+  url: https://www.thetradedesk.com/us/openpath
+  name: OpenPath
+- type: Product
+  url: https://www.thetradedesk.com/us/our-platform/koa-ai-artificial-intelligence
+  name: Koa AI
+- type: Product
+  url: https://www.thetradedesk.com/us/news/introducing-galileo
+  name: Galileo
+- type: Identity
+  url: https://unifiedid.com
+  name: Unified ID 2.0
+- type: Identity
+  url: https://euid.eu
+  name: EUID
+- type: GitHubOrganization
+  url: https://github.com/TheTradeDesk
+- type: GitHubOrganization
+  url: https://github.com/IABTechLab
+  name: IAB Tech Lab (UID2 governance)
+- type: SDK
+  url: https://github.com/TheTradeDesk/ttd-workflows-python
+  name: Workflows Python SDK
+- type: SDK
+  url: https://github.com/TheTradeDesk/ttd-workflows-go
+  name: Workflows Go SDK
+- type: SDK
+  url: https://github.com/TheTradeDesk/ttd-workflows-java
+  name: Workflows Java SDK
+- type: SDK
+  url: https://github.com/TheTradeDesk/ttd-data-python
+  name: Data API Python SDK
+- type: SDK
+  url: https://github.com/TheTradeDesk/ttd-databricks-python
+  name: TTD Databricks Python
+- type: CodeExamples
+  url: https://github.com/TheTradeDesk/Platform
+  name: Platform helper scripts
+- type: PressRoom
+  url: https://www.thetradedesk.com/us/news
+- type: Blog
+  url: https://www.thetradedesk.com/us/news-insights
+- type: Newsroom
+  url: https://www.thetradedesk.com/us/press-room
+- type: AboutUs
+  url: https://www.thetradedesk.com/us/about-us
+- type: Careers
+  url: https://careers.thetradedesk.com
+- type: InvestorRelations
+  url: https://investors.thetradedesk.com
+- type: TermsOfService
+  url: https://www.thetradedesk.com/us/website-privacy-policy
+- type: PrivacyPolicy
+  url: https://www.thetradedesk.com/us/website-privacy-policy
+- type: Contact
+  url: https://www.thetradedesk.com/us/contact-us
+- type: LinkedIn
+  url: https://www.linkedin.com/company/the-trade-desk
+- type: Twitter
+  url: https://twitter.com/thetradedesk
+- type: YouTube
+  url: https://www.youtube.com/@thetradedesk
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
