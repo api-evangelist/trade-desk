@@ -69,7 +69,7 @@ apis:
   - url: openapi/trade-desk-data-api-openapi.yml
     type: OpenAPI
   - url: https://github.com/TheTradeDesk/ttd-data-python
-    type: SDK
+    type: SDKs
     name: Python SDK
   description: >-
     Ingest first-party advertiser audience data, third-party provider
@@ -101,13 +101,13 @@ apis:
     type: OpenAPI
     name: Workflows Swagger (auth-required)
   - url: https://github.com/TheTradeDesk/ttd-workflows-python
-    type: SDK
+    type: SDKs
     name: Python SDK
   - url: https://github.com/TheTradeDesk/ttd-workflows-go
-    type: SDK
+    type: SDKs
     name: Go SDK
   - url: https://github.com/TheTradeDesk/ttd-workflows-java
-    type: SDK
+    type: SDKs
     name: Java SDK
   - url: graphql/trade-desk-graphql.md
     type: GraphQL
@@ -151,10 +151,10 @@ apis:
   humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
   properties:
   - url: https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager
-    type: SDK
+    type: SDKs
     name: GTM Client-Side Template
   - url: https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager
-    type: SDK
+    type: SDKs
     name: GTM Server-Side Template
   description: >-
     Server-side and client-side conversion event ingestion (Apache 2.0
@@ -178,7 +178,7 @@ apis:
     type: Documentation
     name: UID2 Documentation Repository
   - url: https://github.com/IABTechLab/uid2-operator
-    type: SDK
+    type: SDKs
     name: UID2 Operator Reference Implementation
   description: >-
     Unified ID 2.0 is an open-source, deterministic identity framework
@@ -241,19 +241,19 @@ common:
 - type: GitHubOrganization
   url: https://github.com/IABTechLab
   name: IAB Tech Lab (UID2 governance)
-- type: SDK
+- type: SDKs
   url: https://github.com/TheTradeDesk/ttd-workflows-python
   name: Workflows Python SDK
-- type: SDK
+- type: SDKs
   url: https://github.com/TheTradeDesk/ttd-workflows-go
   name: Workflows Go SDK
-- type: SDK
+- type: SDKs
   url: https://github.com/TheTradeDesk/ttd-workflows-java
   name: Workflows Java SDK
-- type: SDK
+- type: SDKs
   url: https://github.com/TheTradeDesk/ttd-data-python
   name: Data API Python SDK
-- type: SDK
+- type: SDKs
   url: https://github.com/TheTradeDesk/ttd-databricks-python
   name: TTD Databricks Python
 - type: CodeExamples
