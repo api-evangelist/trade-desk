@@ -204,6 +204,8 @@ apis:
     attributes, viewability metadata, supply-path metrics — to help
     buyers value impressions and audit inventory.
 common:
+- type: AgenticAccess
+  url: agentic-access/trade-desk-agentic-access.yml
 - type: DomainSecurity
   url: security/trade-desk-domain-security.yml
 - type: Website
