@@ -23,9 +23,20 @@ description: >-
   (partner.thetradedesk.com) but a public docs surface is exposed at
   open.thetradedesk.com. The Trade Desk is publicly traded (NASDAQ: TTD).
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/trade-desk.png
 tags:
 - Advertising
 - Programmatic Advertising
@@ -50,73 +61,6 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-- aid: trade-desk:trade-desk-data-api
-  name: The Trade Desk Data API
-  tags:
-  - Advertising
-  - Data
-  - Audience
-  - Conversions
-  - Privacy
-  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
-  properties:
-  - url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
-    type: Documentation
-  - url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
-    type: Documentation
-  - url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
-    type: Documentation
-  - url: openapi/trade-desk-data-api-openapi.yml
-    type: OpenAPI
-  - url: https://github.com/TheTradeDesk/ttd-data-python
-    type: SDKs
-    name: Python SDK
-  description: >-
-    Ingest first-party advertiser audience data, third-party provider
-    audience data, and offline conversions (CAPI-style), and submit
-    data-subject deletion / opt-out requests across advertiser, merchant,
-    and provider contexts. The Data API powers audience targeting and
-    offline-to-online measurement and supports UID2 identity mapping.
-- aid: trade-desk:trade-desk-workflows-api
-  name: The Trade Desk Workflows API
-  tags:
-  - Advertising
-  - Campaigns
-  - Ad Groups
-  - GraphQL
-  - REST
-  humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
-  properties:
-  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
-    type: Documentation
-  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
-    type: GettingStarted
-  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
-    type: Documentation
-  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
-    type: Documentation
-  - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
-    type: Documentation
-  - url: https://api.thetradedesk.com/workflows/swagger/v1/swagger.yaml
-    type: OpenAPI
-    name: Workflows Swagger (auth-required)
-  - url: https://github.com/TheTradeDesk/ttd-workflows-python
-    type: SDKs
-    name: Python SDK
-  - url: https://github.com/TheTradeDesk/ttd-workflows-go
-    type: SDKs
-    name: Go SDK
-  - url: https://github.com/TheTradeDesk/ttd-workflows-java
-    type: SDKs
-    name: Java SDK
-  - url: graphql/trade-desk-graphql.md
-    type: GraphQL
-  description: >-
-    The Workflows API exposes the high-level campaign, ad group, creative,
-    and bulk-job operations that previously required navigating the legacy
-    Platform API. It blends REST and GraphQL surfaces (including a generic
-    GraphQL passthrough and bulk query jobs) and is the recommended modern
-    integration path for new partners.
 - aid: trade-desk:trade-desk-platform-api
   name: The Trade Desk Platform API
   tags:
@@ -136,11 +80,10 @@ apis:
     type: CodeExamples
     name: TheTradeDesk/Platform helper scripts
   description: >-
-    The original REST Platform API covering advertisers, campaigns, ad
-    groups, creatives, targeting data, reporting, and audience operations.
-    Documentation is gated behind the TTD Partner Portal. New integrations
-    are generally steered to the Workflows API; Platform remains the
-    reference for low-level objects and reporting endpoints.
+    The original REST Platform API covering advertisers, campaigns, ad groups, creatives, targeting data,
+    reporting, and audience operations. Documentation is gated behind the TTD Partner Portal. New integrations
+    are generally steered to the Workflows API; Platform remains the reference for low-level objects and
+    reporting endpoints.
 - aid: trade-desk:trade-desk-realtime-conversion-events-api
   name: The Trade Desk Real-Time Conversion Events API
   tags:
@@ -157,9 +100,8 @@ apis:
     type: SDKs
     name: GTM Server-Side Template
   description: >-
-    Server-side and client-side conversion event ingestion (Apache 2.0
-    Google Tag Manager templates) for capturing high-fidelity attribution
-    signals in a cookie-deprecated environment. Pairs with UID2 for
+    Server-side and client-side conversion event ingestion (Apache 2.0 Google Tag Manager templates) for
+    capturing high-fidelity attribution signals in a cookie-deprecated environment. Pairs with UID2 for
     identity resolution.
 - aid: trade-desk:trade-desk-uid2-api
   name: Unified ID 2.0 (UID2)
@@ -181,12 +123,10 @@ apis:
     type: SDKs
     name: UID2 Operator Reference Implementation
   description: >-
-    Unified ID 2.0 is an open-source, deterministic identity framework
-    seeded by The Trade Desk and now governed by the IAB Tech Lab. UID2
-    resolves hashed email addresses and phone numbers into rotating
-    tokens that publishers, DSPs, SSPs, and measurement vendors can use
-    for addressable advertising without third-party cookies. The EUID
-    variant provides a GDPR-aligned European deployment.
+    Unified ID 2.0 is an open-source, deterministic identity framework seeded by The Trade Desk and now
+    governed by the IAB Tech Lab. UID2 resolves hashed email addresses and phone numbers into rotating
+    tokens that publishers, DSPs, SSPs, and measurement vendors can use for addressable advertising without
+    third-party cookies. The EUID variant provides a GDPR-aligned European deployment.
 - aid: trade-desk:trade-desk-opensincera-api
   name: OpenSincera API
   tags:
@@ -199,10 +139,161 @@ apis:
   - url: https://partner.thetradedesk.com/v3/portal/opensincera/overview
     type: Documentation
   description: >-
-    OpenSincera (from the May 2024 Sincera acquisition) provides
-    programmatic supply-side transparency data — ad slot quality, page
-    attributes, viewability metadata, supply-path metrics — to help
-    buyers value impressions and audit inventory.
+    OpenSincera (from the May 2024 Sincera acquisition) provides programmatic supply-side transparency
+    data — ad slot quality, page attributes, viewability metadata, supply-path metrics — to help buyers
+    value impressions and audit inventory.
+- aid: trade-desk:trade-desk-advertiser-api
+  name: The Trade Desk Advertiser API
+  description: The Advertiser API from The Trade Desk — 1 operation(s) for advertiser.
+  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  tags:
+  - Advertiser
+  properties:
+  - type: OpenAPI
+    url: openapi/trade-desk-advertiser-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-data-python
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  - type: GettingStarted
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-python
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-go
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-java
+  - type: GraphQL
+    url: graphql/trade-desk-graphql.md
+- aid: trade-desk:trade-desk-deletionoptout-api
+  name: The Trade Desk DeletionOptOut API
+  description: The DeletionOptOut API from The Trade Desk — 3 operation(s) for deletionoptout.
+  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  tags:
+  - DeletionOptOut
+  properties:
+  - type: OpenAPI
+    url: openapi/trade-desk-deletionoptout-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-data-python
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  - type: GettingStarted
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-python
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-go
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-java
+  - type: GraphQL
+    url: graphql/trade-desk-graphql.md
+- aid: trade-desk:trade-desk-offlineconversion-api
+  name: The Trade Desk OfflineConversion API
+  description: The OfflineConversion API from The Trade Desk — 1 operation(s) for offlineconversion.
+  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  tags:
+  - OfflineConversion
+  properties:
+  - type: OpenAPI
+    url: openapi/trade-desk-offlineconversion-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-data-python
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  - type: GettingStarted
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-python
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-go
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-java
+  - type: GraphQL
+    url: graphql/trade-desk-graphql.md
+- aid: trade-desk:trade-desk-thirdparty-api
+  name: The Trade Desk ThirdParty API
+  description: The ThirdParty API from The Trade Desk — 1 operation(s) for thirdparty.
+  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  tags:
+  - ThirdParty
+  properties:
+  - type: OpenAPI
+    url: openapi/trade-desk-thirdparty-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-data-python
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  - type: GettingStarted
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-python
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-go
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-workflows-java
+  - type: GraphQL
+    url: graphql/trade-desk-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/trade-desk-agentic-access.yml
