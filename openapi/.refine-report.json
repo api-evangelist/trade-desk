@@ -1,0 +1,20 @@
+{
+  "provider": "trade-desk",
+  "sources": [
+    "trade-desk-advertiser-api-openapi.yml",
+    "trade-desk-deletionoptout-api-openapi.yml",
+    "trade-desk-offlineconversion-api-openapi.yml",
+    "trade-desk-thirdparty-api-openapi.yml"
+  ],
+  "outputs": [
+    "trade-desk-advertiser-api-openapi.yml",
+    "trade-desk-deletionoptout-api-openapi.yml",
+    "trade-desk-offlineconversion-api-openapi.yml",
+    "trade-desk-thirdparty-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
