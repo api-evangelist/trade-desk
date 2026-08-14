@@ -58,7 +58,7 @@ tags:
 - Open Measurement
 url: https://raw.githubusercontent.com/api-evangelist/trade-desk/refs/heads/main/apis.yml
 created: '2026-05-25'
-modified: '2026-05-25'
+modified: '2026-08-13'
 specificationVersion: '0.20'
 apis:
 - aid: trade-desk:trade-desk-platform-api
@@ -69,6 +69,7 @@ apis:
   - REST
   - Reporting
   humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  baseURL: https://api.thetradedesk.com/v3
   properties:
   - url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
     type: Documentation
@@ -92,6 +93,7 @@ apis:
   - Measurement
   - Server-Side
   humanURL: https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview
+  baseURL: https://insight.adsrvr.org
   properties:
   - url: https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager
     type: SDKs
@@ -111,6 +113,7 @@ apis:
   - Open Source
   - IAB Tech Lab
   humanURL: https://unifiedid.com
+  baseURL: https://prod.uidapi.com
   properties:
   - url: https://unifiedid.com
     type: Portal
@@ -135,6 +138,7 @@ apis:
   - Supply Path
   - Transparency
   humanURL: https://partner.thetradedesk.com/v3/portal/opensincera/overview
+  baseURL: https://open.sincera.io/api
   properties:
   - url: https://partner.thetradedesk.com/v3/portal/opensincera/overview
     type: Documentation
@@ -146,6 +150,7 @@ apis:
   name: The Trade Desk Advertiser API
   description: The Advertiser API from The Trade Desk — 1 operation(s) for advertiser.
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  baseURL: https://usw-data.adsrvr.org
   tags:
   - Advertiser
   properties:
@@ -184,6 +189,7 @@ apis:
   name: The Trade Desk DeletionOptOut API
   description: The DeletionOptOut API from The Trade Desk — 3 operation(s) for deletionoptout.
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  baseURL: https://usw-data.adsrvr.org
   tags:
   - DeletionOptOut
   properties:
@@ -222,6 +228,7 @@ apis:
   name: The Trade Desk OfflineConversion API
   description: The OfflineConversion API from The Trade Desk — 1 operation(s) for offlineconversion.
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  baseURL: https://offlineattrib.adsrvr.org
   tags:
   - OfflineConversion
   properties:
@@ -260,6 +267,7 @@ apis:
   name: The Trade Desk ThirdParty API
   description: The ThirdParty API from The Trade Desk — 1 operation(s) for thirdparty.
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  baseURL: https://usw-data.adsrvr.org
   tags:
   - ThirdParty
   properties:
@@ -294,7 +302,98 @@ apis:
     url: https://github.com/TheTradeDesk/ttd-workflows-java
   - type: GraphQL
     url: graphql/trade-desk-graphql.md
+- aid: trade-desk:trade-desk-ipaddress-api
+  name: The Trade Desk IPAddress Data API
+  description: >-
+    IP-address ingestion endpoints of the TTD Data API — upload first-party or third-party
+    IP-address-based targeting data for use in audience targeting. Discovered 2026-08-13 in the
+    provider-published Swagger document at https://usw-data.adsrvr.org/swagger/v1/swagger.json,
+    which carries two operations under the IPAddress tag that were absent from the earlier harvest.
+  humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
+  baseURL: https://usw-data.adsrvr.org
+  tags:
+  - IPAddress
+  properties:
+  - type: OpenAPI
+    url: openapi/trade-desk-ipaddress-api-openapi.yml
+  - type: Overlay
+    url: overlays/trade-desk-ipaddress-api-overlay.yaml
+  - type: Documentation
+    url: >-
+      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+  - type: SDKs
+    url: https://github.com/TheTradeDesk/ttd-data-python
 common:
+- type: TrustCenter
+  url: https://www.thetradedesk.com/trust
+  name: The Trade Desk Trust Center
+- type: DeveloperPortal
+  url: https://open.thetradedesk.com
+  name: OpenTTD developer portal
+- type: APIReference
+  url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
+  name: Platform API reference (Partner Portal, authenticated)
+- type: Roadmap
+  url: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/UpgradeSupport
+  name: Platform API upcoming changes and schedules
+- type: SDKs
+  url: packages/trade-desk-packages.yml
+  name: First-party client library inventory
+- type: OpenAPI
+  url: openapi/_original/trade-desk-data-api-swagger.json
+  name: TTD Data API — verbatim provider Swagger (8 operations)
+- type: GraphQL
+  url: https://api.thetradedesk.com/graphql
+- type: SignUp
+  url: https://open.sincera.io/sign_up
+- type: Support
+  url: https://open.thetradedesk.com/contact-us
+- type: RateLimits
+  url: rate-limits/trade-desk-rate-limits.yml
+- type: Plans
+  url: plans/trade-desk-plans-pricing.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/trade-desk-data-model.yml
+- type: Components
+  url: components/trade-desk-components.yml
+- type: ChangeLog
+  url: changelog/trade-desk-changelog.yml
+- type: Conventions
+  url: conventions/trade-desk-conventions.yml
+- type: Sandbox
+  url: sandbox/trade-desk-sandbox.yml
+- type: Security
+  url: https://www.thetradedesk.com/trust/report-a-vulnerability
+- type: VulnerabilityDisclosure
+  url: security/trade-desk-vulnerability-disclosure.yml
+- type: Authentication
+  url: authentication/trade-desk-authentication.yml
+- type: OAuthScopes
+  url: scopes/trade-desk-scopes.yml
+- type: Deprecation
+  url: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/UpgradeSupport
+- type: Lifecycle
+  url: lifecycle/trade-desk-lifecycle.yml
+- type: ErrorCodes
+  url: errors/trade-desk-error-codes.yml
+- type: ErrorCatalog
+  url: errors/trade-desk-problem-types.yml
+- type: Compliance
+  url: https://www.thetradedesk.com/trust/security
+- type: Conformance
+  url: conformance/trade-desk-conformance.yml
+- type: LLMsTxt
+  url: llms/trade-desk-llms.txt
+- type: ToolCrosswalk
+  url: mcp/trade-desk-tool-crosswalk.yml
+- type: MCPServer
+  url: mcp/trade-desk-mcp.yml
+- type: WellKnown
+  url: well-known/trade-desk-well-known.yml
+- type: Packages
+  url: packages/trade-desk-packages.yml
 - type: AgenticAccess
   url: agentic-access/trade-desk-agentic-access.yml
 - type: DomainSecurity
@@ -367,9 +466,10 @@ common:
 - type: InvestorRelations
   url: https://investors.thetradedesk.com
 - type: TermsOfService
-  url: https://www.thetradedesk.com/us/website-privacy-policy
+  url: https://www.thetradedesk.com/legal/trade-desk-advertising-terms-4-7-26
+  name: The Trade Desk Advertising Terms (April 7, 2026)
 - type: PrivacyPolicy
-  url: https://www.thetradedesk.com/us/website-privacy-policy
+  url: https://www.thetradedesk.com/legal/website-privacy-policy
 - type: Contact
   url: https://www.thetradedesk.com/us/contact-us
 - type: LinkedIn
@@ -381,3 +481,8 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 34
+  pass: local-v1
