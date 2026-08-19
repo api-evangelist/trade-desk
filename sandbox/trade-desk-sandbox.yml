@@ -1,0 +1,47 @@
+generated: '2026-08-13'
+method: searched
+source: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PartnerSandbox
+name: Partner Sandbox
+description: An isolated environment for testing the Platform API without touching production data or
+  the billing cycle. It is a weekly CLONE of the partner's own production data, not a synthetic fixture
+  set — which is why the provider publishes no test cards, magic IDs or seeded entities.
+test_vs_live:
+  separation: separate hostname
+  key_prefixes: null
+  note: There is no test-mode key prefix. The provider states the sandbox mirrors production and that
+    a production key works there, though a sandbox-only key can be generated for additional security.
+endpoints:
+- api: Platform REST
+  sandbox: https://ext-api.sb.thetradedesk.com/v3/
+  production: https://api.thetradedesk.com/v3/
+- api: Platform GraphQL
+  sandbox: https://ext-api.sb.thetradedesk.com/graphql
+  production: https://api.thetradedesk.com/graphql
+- api: Workflows
+  sandbox: https://ext-api.sb.thetradedesk.com/workflows
+  production: https://api.thetradedesk.com/workflows
+  source: https://github.com/TheTradeDesk/ttd-workflows-python#server-selection
+- api: Platform UI
+  sandbox: https://ext-desk.sb.thetradedesk.com
+  note: UI equivalent for inspecting the results of sandbox API calls.
+data_refresh:
+  cadence: weekly
+  copied: Thursday night; ready Friday morning in North America
+  behaviour: The sandbox is wiped and refreshed with the latest production data each week. Generated tokens
+    are preserved across the refresh.
+  guidance: Run test workflows as early as possible after the Friday refresh and complete them within
+    one to two days.
+identifiers:
+  note: Partner ID, provider ID and brand IDs are identical to production.
+test_values: []
+test_values_note: None published. Because the sandbox is a clone of the partner's own production data,
+  there are no magic test identifiers, test cards or fixture tokens to record. Nothing has been invented
+  here.
+unsupported:
+- surface: Data API
+  reason: Audience data upload uses header authentication for the Data API, which is incompatible with
+    the Partner Sandbox. Data must be uploaded to production and picked up by the weekly sync.
+- surface: /v3/study endpoints
+  reason: No lift-study endpoints are supported in the Partner Sandbox.
+time_simulation: null
+fixture_tooling: null

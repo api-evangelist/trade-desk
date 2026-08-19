@@ -1,0 +1,868 @@
+{
+  "item": [
+    {
+      "id": "3211dcf6-ea95-482d-977f-e2b71febd325",
+      "name": "IPAddress",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a0ad409-65d7-40aa-bc04-c8cf431dbfeb",
+          "name": "Upload first-party IP address data for the specified ID.",
+          "request": {
+            "name": "Upload first-party IP address data for the specified ID.",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "data",
+                "firstpartyipaddress"
+              ],
+              "host": [
+                "usw-data",
+                "adsrvr",
+                "org"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Data API token for authentication.",
+                "key": "TTD-Auth",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65339783-45e7-448d-b21f-b1a7550fb9b9",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DataOwnerId\": \"string\",\n  \"FailedLines\": [\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"NotTargetable\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    },\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"InvalidIPAddress\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ca4cccc-2754-4197-9c53-ad0642e31971",
+              "name": "Bad Request - Invalid JSON, missing items, advertiser not configured, or policy restrictions",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DataOwnerId\": \"string\",\n  \"FailedLines\": [\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"NotTargetable\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    },\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"InvalidIPAddressRange\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "475c05d6-de20-4c1d-84f4-f9c463d2079a",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a95e15ed-c0da-4e12-892d-a887e2e8240c",
+              "name": "Forbidden - Cannot upload IP address data for this advertiser",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46e3cd42-922a-437a-b65a-3512684fc305",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DataOwnerId\": \"string\",\n  \"FailedLines\": [\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"NotTargetable\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    },\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"InvalidIPAddressRange\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af3e5f30-98ee-49d2-bdd6-c8ba462ca4c0",
+              "name": "Internal Server Error - Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4586198d-825a-4699-8570-1b34b62f7b07",
+              "name": "Service Unavailable - Handler disabled or request dropped",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "firstpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18da9431-96b5-4144-aa35-02b458bde707",
+          "name": "Upload third-party IP address data for the specified ID.",
+          "request": {
+            "name": "Upload third-party IP address data for the specified ID.",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "data",
+                "thirdpartyipaddress"
+              ],
+              "host": [
+                "usw-data",
+                "adsrvr",
+                "org"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Data API token for authentication.",
+                "key": "TTD-Auth",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8d37d35-e1f9-424d-b753-b3dda6badd65",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DataOwnerId\": \"string\",\n  \"FailedLines\": [\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"NotTargetable\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    },\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"InvalidIPAddressRange\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "275fbf2c-6637-4020-bff2-1850a4a08afb",
+              "name": "Bad Request - Invalid JSON, missing items, data provider not configured, or policy restrictions",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DataOwnerId\": \"string\",\n  \"FailedLines\": [\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"NotTargetable\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    },\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"InvalidIPAddressRange\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70414fa5-012e-422e-9576-9cbe0f519ddc",
+              "name": "Unauthorized - Invalid or missing authentication token",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b8b55dbd-fdff-4b97-8717-c3b0ca7fcb72",
+              "name": "Forbidden - Cannot upload IP address data for this data provider",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dfcfedf4-c159-4fc6-8978-5040f7d9b14f",
+              "name": "Too Many Requests - Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DataOwnerId\": \"string\",\n  \"FailedLines\": [\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"NotTargetable\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    },\n    {\n      \"DataName\": \"string\",\n      \"ErrorCode\": \"InvalidIPAddressRange\",\n      \"IPAddress\": \"string\",\n      \"Message\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"DataNumber\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30b05ccc-6799-470b-bc49-e502c072134e",
+              "name": "Internal Server Error - Unexpected server error",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a1788669-dca2-4c04-a6e5-abf52ee7a7c7",
+              "name": "Service Unavailable - Handler disabled or request dropped",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "data",
+                    "thirdpartyipaddress"
+                  ],
+                  "host": [
+                    "usw-data",
+                    "adsrvr",
+                    "org"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Data API token for authentication.",
+                    "key": "TTD-Auth",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataOwnerId\": \"<string>\",\n  \"Items\": [\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    },\n    {\n      \"Data\": [\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"Name\": \"<string>\",\n          \"TimestampUtc\": \"<dateTime>\",\n          \"TtlInMinutes\": \"<integer>\",\n          \"TargetingDataMetadataId\": \"<long>\",\n          \"IPAddresses\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"IPAddressRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ExpandedIpAddresses\": [\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"IPAddress\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"IPAddressRange\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"TargetingDataMetadataId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"TDID\": \"<string>\",\n      \"DAID\": \"<string>\",\n      \"UID2\": \"<string>\",\n      \"UID2Token\": \"<string>\",\n      \"RampID\": \"<string>\",\n      \"CoreID\": \"<string>\",\n      \"EUID\": \"<string>\",\n      \"EUIDToken\": \"<string>\",\n      \"ID5\": \"<string>\",\n      \"NetID\": \"<string>\",\n      \"FirstID\": \"<string>\",\n      \"UtiqID\": \"<string>\",\n      \"MerkuryID\": \"<string>\",\n      \"RealID\": \"<string>\",\n      \"IqviaPPID\": \"<string>\",\n      \"CookieMappingPartnerId\": \"<string>\"\n    }\n  ],\n  \"DataLoadTraceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://usw-data.adsrvr.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0c913a4d-f450-4fbd-ad8b-247e7766b555",
+    "name": "TTD Data IPAddress API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Trade Desk Data API IP-address ingestion endpoints. Upload first-party or third-party IP-address-based targeting data for use in audience targeting. Harvested verbatim from the provider-published Swagger document at https://usw-data.adsrvr.org/swagger/v1/swagger.json, then split by tag by the API Evangelist enrichment pipeline.",
+      "type": "text/plain"
+    }
+  }
+}

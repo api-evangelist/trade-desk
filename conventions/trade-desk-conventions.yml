@@ -1,0 +1,92 @@
+generated: '2026-08-13'
+method: searched
+source:
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ApiUsageGuidelines
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PlatformAuthentication
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/RateLimits
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ReturnCodes
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/GqlApiCallsPlatform
+- https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/DataApiCallsAdvertiser
+protocol:
+  transport: JSON over HTTPS
+  request_content_type: application/json
+  note: 'Clients are told to set Content-Type: application/json on every request and to configure their
+    JSON deserializer to tolerate unknown properties in responses.'
+authentication:
+  style: api-key header
+  header: TTD-Auth
+  artifact: authentication/trade-desk-authentication.yml
+  graphql_note: 'Exactly one auth header may be sent: TTD-Auth (preferred, for Desk/Unified API tokens)
+    or Authorization: Bearer (Desk UI JWT only). Sending both is an error.'
+idempotency:
+  supported: false
+  note: No idempotency key, no replay window, no dedupe contract is documented anywhere in the public
+    developer docs — including on the write-heavy Data API ingestion endpoints and the Workflows bulk-job
+    endpoints. A client that retries after a 429 or a timeout has no published guarantee about duplicate
+    effects. This is a real gap on an API whose own retry guidance is "wait and retry".
+pagination:
+  style: page-number
+  parameters:
+  - PageSize
+  - page
+  response_fields:
+  - TotalFilteredCount
+  - TotalUnfilteredCount
+  controls:
+  - name: ExcludeTotalCounts
+    type: boolean
+    effect: Suppresses TotalFilteredCount/TotalUnfilteredCount to improve performance and reduce timeout
+      risk.
+  guidance: Keep PageSize at or below 1000; larger pages degrade performance and increase timeout likelihood.
+  graphql: Bulk operations exist for large-scale GraphQL queries so callers can avoid manual pagination
+    entirely.
+partial_updates:
+  supported: true
+  semantics: Send the object ID plus only the properties to change. Any property present in the request
+    is updated even when its value is null. Arrays in PUT requests REPLACE the existing array rather than
+    appending — callers must GET, merge, then PUT.
+  anti_pattern: Do not echo an entire GET response back in a PUT; it slows request processing.
+field_expansion:
+  supported: false
+  note: REST has no expand/sparse-field mechanism. GraphQL is the field-selection surface — the provider
+    frames it explicitly as the way to avoid over- and under-fetching.
+metadata:
+  supported: false
+request_tracing:
+  supported: true
+  header: x-ttd-request-id
+  note: Observed on live gateway responses (also echoed in the JSON error body as request_id). Not documented
+    in the developer docs.
+versioning:
+  style: uri-path
+  current: v3
+  artifact: lifecycle/trade-desk-lifecycle.yml
+error_envelope:
+  artifact: errors/trade-desk-problem-types.yml
+  format: proprietary
+  note: Not RFC 9457. Data API v2 returns ErrorCode + Message + FailedLines[]; the Platform API returns
+    an undocumented JSON error body.
+rate_limit_signaling:
+  artifact: rate-limits/trade-desk-rate-limits.yml
+  status: 429
+  header: Retry-After
+  quota_headers: false
+concurrency:
+  guidance: Four callers per endpoint (REST) or per operation (GraphQL).
+delta_sync:
+  supported: true
+  docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PlatformSynchronization
+  note: Delta endpoints and delta mutations exist specifically to reduce call frequency; the OIDC scope
+    list carries dedicated *.delta.read scopes for advertiser, campaign, adgroup, creative and contract.
+strict_mode:
+  documented: true
+  docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/StrictMode
+network:
+  egress_allowlist:
+  - 3.210.43.156
+  - 54.166.8.75
+  - 44.214.66.193
+  - 44.223.179.137
+  - 54.161.67.15
+  note: Published source IPs for the REST and GraphQL Platform API endpoints, for partners with outbound
+    firewall restrictions.

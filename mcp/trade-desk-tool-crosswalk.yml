@@ -1,0 +1,110 @@
+generated: '2026-08-13'
+method: derived
+source: mcp/trade-desk-mcp.yml + openapi/ + https://github.com/TheTradeDesk/ttd-workflows-python/blob/main/.speakeasy/gen.lock
+note: The Trade Desk publishes NO MCP tool inventory — OAK is documented as six capabilities, and tools/list
+  is auth-gated. This crosswalk therefore binds CAPABILITIES to backing operations rather than tools to
+  operations, and every confidence is low by construction. It is a map of which published surfaces a capability
+  could plausibly be served by, not a claim about OAK's internal tool set.
+surfaces:
+  openapi:
+    files:
+    - openapi/trade-desk-advertiser-api-openapi.yml
+    - openapi/trade-desk-thirdparty-api-openapi.yml
+    - openapi/trade-desk-offlineconversion-api-openapi.yml
+    - openapi/trade-desk-deletionoptout-api-openapi.yml
+    - openapi/trade-desk-ipaddress-api-openapi.yml
+    scope: Data API only (8 operations). No public OpenAPI exists for the Platform REST API or the Workflows
+      API.
+    gated: false
+  workflows_openapi:
+    url: https://api.thetradedesk.com/workflows/swagger/v1/swagger.yaml
+    gated: true
+    note: 'Named as the SDK generation source in TheTradeDesk/ttd-workflows-python/.speakeasy/workflow.yaml,
+      with authHeader: TTD-Auth. Returns 401 anonymously, so the spec itself is not harvestable.'
+  graphql:
+    endpoint: https://api.thetradedesk.com/graphql
+    gated: true
+    note: Introspection returns 401 anonymously; sandbox endpoint https://ext-api.sb.thetradedesk.com/graphql
+      also 401.
+  rest:
+    base: https://api.thetradedesk.com/v3/
+    gated: true
+    note: Reference is on the authenticated Partner Portal; no public spec.
+  mcp:
+    url: https://api.thetradedesk.com/mcp/platform-management
+    gated: true
+    note: tools/list returns 401.
+crosswalk:
+- tool: Data Retrieval
+  category: read
+  rest:
+  - getFirstPartyDataJob
+  - getThirdPartyDataJob
+  - getCampaignVersion
+  - getJobStatus
+  binding: workflows-sdk
+  confidence: low
+  note: operationIds verified in the provider-published Speakeasy gen.lock for ttd-workflows-python; no
+    public spec to bind parameters from.
+- tool: Configuration & Management
+  category: write
+  rest:
+  - createCampaign
+  - updateCampaign
+  - archiveCampaigns
+  - createAdGroup
+  - updateAdGroup
+  - archiveAdGroups
+  - createCampaignsJob
+  - updateCampaignsJob
+  - createAdGroupsJob
+  - updateAdGroupsJob
+  binding: workflows-sdk
+  confidence: low
+  note: Capability is H2 2026, not yet shipped. operationIds verified in gen.lock.
+- tool: Reporting
+  category: read
+  rest: []
+  binding: none
+  confidence: low
+  note: My Reports / scheduled reports live on the Platform REST API, which publishes no public spec.
+mcp_only:
+- tool: Knowledge Search
+  reason: Searches The Trade Desk documentation and knowledge base. No REST or GraphQL operation exposes
+    this; the docs content surface (open.thetradedesk.com/rest/openttd/<persona>/content/docs/...) is
+    not a documented public API.
+- tool: Insights
+  reason: Koa-powered analysis, H2 2026. No published operation.
+- tool: Troubleshooting
+  reason: Koa-powered diagnostics, H2 2026. No published operation.
+rest_only:
+- capability: First/third-party audience data ingestion
+  operations:
+  - IngestAdvertiserData
+  - IngestThirdPartyData
+  - IngestFirstPartyIPAddressData
+  - IngestThirdPartyIPAddressData
+  note: Data API. No OAK capability covers data upload.
+- capability: Offline conversion ingestion
+  operations:
+  - IngestOfflineConversionData
+- capability: Deletion / opt-out (DSR)
+  operations:
+  - DataSubjectRequestAdvertiserData
+  - DataSubjectRequestMerchantData
+  - DataSubjectRequestThirdPartyData
+- capability: Generic GraphQL / REST passthrough (Workflows)
+  operations:
+  - submitGraphQlRequest
+  - submitRestRequest
+  - submitGraphQlBulkQueryJob
+  - getGraphQlBulkJobStatus
+  note: operationIds verified in the provider-published gen.lock.
+coverage:
+  tools_named: 6
+  tools_bound: 2
+  mcp_only: 3
+  rest_ops_public: 8
+  rest_ops_with_a_tool: 0
+  note: Zero of the 8 publicly specified Data API operations map to an OAK capability — OAK covers the
+    Platform/Workflows surface, the public OpenAPI covers the Data surface, and the two do not overlap.

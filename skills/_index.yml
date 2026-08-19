@@ -1,0 +1,28 @@
+generated: '2026-08-13'
+method: generated
+source: openapi/ + provider docs at open.thetradedesk.com
+note: Skills are grounded in operationIds verified verbatim in the repo OpenAPI files. The OAK skill is
+  grounded in the provider's own MCP configuration example rather than a spec, because no public contract
+  exists for it.
+skills:
+- file: trade-desk-onboard-first-party-audience.md
+  name: Onboard a first-party audience segment to The Trade Desk
+  api: openapi/trade-desk-advertiser-api-openapi.yml
+  operations:
+  - IngestAdvertiserData
+- file: trade-desk-handle-deletion-optout.md
+  name: Handle a data subject deletion or opt-out request at The Trade Desk
+  api: openapi/trade-desk-deletionoptout-api-openapi.yml
+  operations:
+  - DataSubjectRequestAdvertiserData
+  - DataSubjectRequestThirdPartyData
+  - DataSubjectRequestMerchantData
+- file: trade-desk-send-offline-conversions.md
+  name: Send offline conversions to The Trade Desk
+  api: openapi/trade-desk-offlineconversion-api-openapi.yml
+  operations:
+  - IngestOfflineConversionData
+- file: trade-desk-connect-open-agentic-kit.md
+  name: Connect an agent to The Trade Desk Open Agentic Kit (OAK)
+  api: mcp/trade-desk-mcp.yml
+  operations: []

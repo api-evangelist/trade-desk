@@ -1,0 +1,147 @@
+generated: '2026-08-13'
+method: searched
+source: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes
+name: Platform API release notes
+scheme: dated entries, newest first, each with a "what you need to know and do" table (change summary
+  + action required)
+current_version: v3
+surfaces:
+- name: Platform API release notes
+  url: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes
+  audience: advertiser
+- name: Data release notes
+  url: https://open.thetradedesk.com/provider/docsApp/ProviderNews/news/doc/ReleaseNotesData
+  audience: provider
+- name: Seller release notes
+  url: https://open.thetradedesk.com/seller/docsApp/NewsSeller/news/doc/ReleaseNotesSeller
+  audience: seller
+- name: Upcoming changes and schedules
+  url: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/UpgradeSupport
+  audience: advertiser
+- name: Platform UI release notes (Knowledge Portal)
+  url: https://desk.thetradedesk.com/knowledge-portal/en/current-release-notes-kokai.html
+  audience: all
+  gated: true
+archives:
+- https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotesArchives
+- https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes2024
+- https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes2023
+entry_count: 28
+window:
+  from: '2026-02-06'
+  to: '2026-08-10'
+entries:
+- date: '2026-08-10'
+  title: Open Agentic Kit available in private beta
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#oak-private-beta
+  breaking: false
+- date: '2026-08-10'
+  title: Enhancements to Koa Optimizations
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#koa-optimizations-update
+  breaking: false
+- date: '2026-07-24'
+  title: Report download link now requires authentication
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#report-download-link
+  breaking: false
+- date: '2026-07-13'
+  title: Impression placement ID update
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#impression-placement-id
+  breaking: false
+- date: '2026-07-08'
+  title: Creating circle geofence segments with GraphQL
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#july-2-2026
+  breaking: false
+- date: '2026-07-06'
+  title: 'Hit counts: a new ID counting methodology'
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#hit-counts
+  breaking: true
+- date: '2026-07-01'
+  title: Adbug page quality fields deprecation
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#adbug-deprecation
+  breaking: true
+- date: '2026-06-24'
+  title: Data API SDK
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#june-24-2026
+  breaking: false
+- date: '2026-06-11'
+  title: Koa bidding strategy
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#koa-bidding-strategy
+  breaking: false
+- date: '2026-05-27'
+  title: Impression cost reporting updates
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#myreports-trading-modes
+  breaking: false
+- date: '2026-05-22'
+  title: Realytics measurement deprecation
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#realytics
+  breaking: true
+- date: '2026-05-22'
+  title: Report templates query and field changes
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#report-templates-api-rename
+  breaking: false
+- date: '2026-05-20'
+  title: REDS updates
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#reds-trading-modes
+  breaking: true
+- date: '2026-05-06'
+  title: Report column deprecation
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#report-column-deprecation
+  breaking: true
+- date: '2026-05-04'
+  title: Contextual targeting with entities and groups
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#contextual-entities
+  breaking: false
+- date: '2026-04-27'
+  title: Field renamed for DMA geotargeting
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#metro
+  breaking: true
+- date: '2026-04-22'
+  title: Tracking full-site events in Shopify
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#shopify-full-site-events
+  breaking: false
+- date: '2026-04-17'
+  title: The Trade Desk conversion lift studies (closed beta)
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#conversion-lift-studies
+  breaking: false
+- date: '2026-04-06'
+  title: Databricks connector solutions
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#databricks-connector-solutions
+  breaking: false
+- date: '2026-04-03'
+  title: 'New reporting solution: On-demand reporting queries'
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#graphql-reporting-queries
+  breaking: false
+- date: '2026-03-23'
+  title: New brand-agency organization model for UMP
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#forecasting
+  breaking: false
+- date: '2026-03-20'
+  title: Snowflake Native App tracking tags feature
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#snowflake-tracking-tags
+  breaking: false
+- date: '2026-03-17'
+  title: Forecasting
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#forecasting
+  breaking: false
+- date: '2026-03-02'
+  title: New GraphQL API for uploading creatives (closed beta)
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#creatives-gql-update
+  breaking: false
+- date: '2026-03-02'
+  title: First-party data uploader
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#march-2-2026
+  breaking: false
+- date: '2026-02-25'
+  title: Snowflake Native App optout/deletion pages
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#snowflake-optout-delete
+  breaking: false
+- date: '2026-02-20'
+  title: 'Trading Modes: Default mode update (closed beta)'
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#trading-modes-default-update
+  breaking: false
+- date: '2026-02-06'
+  title: Campaign pacing stability improvements
+  anchor: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes#pacing-stability-upgrade
+  breaking: false
+note: Recent window only, harvested from the current Platform API release-notes page. Entries older than
+  this page are on the archive pages listed above.

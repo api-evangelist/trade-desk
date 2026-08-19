@@ -1,0 +1,60 @@
+generated: '2026-08-13'
+method: searched
+probe: true
+url: https://www.thetradedesk.com/trust
+source: https://www.thetradedesk.com/trust/security
+sections:
+- name: Trust Center
+  url: https://www.thetradedesk.com/trust
+- name: Security posture
+  url: https://www.thetradedesk.com/trust/security
+- name: Security bulletins
+  url: https://www.thetradedesk.com/trust/security-bulletins
+- name: Report a vulnerability
+  url: https://www.thetradedesk.com/trust/report-a-vulnerability
+certifications:
+- SSAE18 SOC 2 Type 2
+- SSAE18 SOC 1
+- Sarbanes-Oxley (SOX) Section 404
+- PCI DSS SAQ A (self-attestation)
+frameworks_aligned:
+- ISO/IEC 27001
+- ISO/IEC 27002:2015
+- NIST 800-53
+- NIST SP 800-88
+certification_notes:
+- 'SOC 2: "annually audited against AICPA''s SSAE18 SOC 2 standard by an independent auditing firm."'
+- SOC 1 is audited annually alongside SOX requirements; SOX 404 applies as a NASDAQ-listed company (TTD).
+- PCI DSS is a self-attestation questionnaire version A — the company notes it does not directly process
+  credit card data.
+- ISO/IEC 27001 is stated as the BASIS of the information security program, not as a certification. Recorded
+  as aligned, not certified.
+program_scope: Infrastructure, personnel, data handling, access management, incident response and business
+  continuity across a hybrid-cloud, multi-tenant architecture with logical tenant separation, continuous
+  monitoring, annual third-party penetration testing and formal change management.
+privacy:
+- name: Data Processing Agreement
+  url: https://www.thetradedesk.com/legal/dpa-data-processing-agreement
+- name: Privacy policy
+  url: https://www.thetradedesk.com/legal/privacy
+- name: California privacy disclosures
+  url: https://www.thetradedesk.com/legal/california-privacy-disclosures
+- name: Modern slavery and human trafficking statement
+  url: https://www.thetradedesk.com/legal/modern-slavery-and-human-trafficking-statement
+- name: UK tax strategy statement
+  url: https://www.thetradedesk.com/legal/uk-tax-strategy-statement
+evidence:
+- source: https://www.thetradedesk.com/trust
+  http_status: 200
+  fetched: '2026-08-13'
+- source: https://www.thetradedesk.com/trust/security
+  http_status: 200
+  fetched: '2026-08-13'
+  keywords:
+  - SOC 2
+  - SOC 1
+  - SOX
+  - PCI-DSS
+  - ISO/IEC 27001
+  - NIST 800-53
+  - penetration testing

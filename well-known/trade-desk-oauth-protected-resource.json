@@ -1,0 +1,1 @@
+{"resource":"https://api.thetradedesk.com/mcp/platform-management","authorization_servers":["https://auth.thetradedesk.com"],"scopes_supported":["openid","profile","email","offline_access","ttdapi"],"bearer_methods_supported":["header"]}

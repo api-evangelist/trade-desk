@@ -1,0 +1,89 @@
+generated: '2026-08-13'
+method: searched
+source: https://pypi.org/pypi/ttd-workflows/json; https://pypi.org/pypi/ttd-data/json; https://pypi.org/pypi/ttd-databricks/json;
+  https://proxy.golang.org/github.com/!the!trade!desk/ttd-workflows-go/@latest; https://repo1.maven.org/maven2/com/thetradedesk/workflows/maven-metadata.xml
+note: All five first-party client libraries are Speakeasy-generated from The Trade Desk's own OpenAPI
+  sources, declared in each repo's .speakeasy/workflow.yaml. The Workflows SDKs (Python/Go/Java) all released
+  0.13.2 on the same day, 2026-04-24, from the same spec revision.
+packages:
+- language: python
+  registry: pypi
+  name: ttd-workflows
+  url: https://pypi.org/project/ttd-workflows/
+  install: pip install ttd-workflows
+  official: true
+  version: 0.13.2
+  published: '2026-04-24'
+  repository: https://github.com/TheTradeDesk/ttd-workflows-python
+  api: The Trade Desk Workflows API (https://api.thetradedesk.com/workflows)
+- language: go
+  registry: go
+  name: github.com/TheTradeDesk/ttd-workflows-go
+  url: https://pkg.go.dev/github.com/TheTradeDesk/ttd-workflows-go
+  install: go get github.com/TheTradeDesk/ttd-workflows-go
+  official: true
+  version: v0.13.2
+  published: '2026-04-24'
+  repository: https://github.com/TheTradeDesk/ttd-workflows-go
+  api: The Trade Desk Workflows API
+- language: java
+  registry: maven
+  name: com.thetradedesk:workflows
+  url: https://repo1.maven.org/maven2/com/thetradedesk/workflows/
+  install: implementation 'com.thetradedesk:workflows:0.13.2'
+  official: true
+  version: 0.13.2
+  published: '2026-04-24'
+  repository: https://github.com/TheTradeDesk/ttd-workflows-java
+  api: The Trade Desk Workflows API
+- language: python
+  registry: pypi
+  name: ttd-data
+  url: https://pypi.org/project/ttd-data/
+  install: pip install ttd-data
+  official: true
+  version: 0.2.6
+  published: '2026-07-14'
+  repository: https://github.com/TheTradeDesk/ttd-data-python
+  api: The Trade Desk Data API (https://usw-data.adsrvr.org)
+- language: python
+  registry: pypi
+  name: ttd-databricks
+  url: https://pypi.org/project/ttd-databricks/
+  install: pip install ttd-databricks
+  official: true
+  version: 0.4.0
+  published: '2026-07-15'
+  repository: https://github.com/TheTradeDesk/ttd-databricks-python
+  api: TTD Databricks state management
+- language: javascript
+  registry: null
+  name: conversion-events-sdk-for-googletagmanager
+  url: https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager
+  install: Import the template into Google Tag Manager (client-side)
+  official: true
+  version: null
+  published: '2026-06-26'
+  note: Distributed as a Google Tag Manager custom template, not through a package registry — no registry
+    metadata endpoint exists to query, so version is null. `published` is the last commit date on the
+    default branch.
+- language: javascript
+  registry: null
+  name: conversion-events-server-side-googletagmanager
+  url: https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager
+  install: Import the template into Google Tag Manager (server-side)
+  official: true
+  version: null
+  published: '2026-03-04'
+  note: Server-side GTM template; no package registry, so version is null. `published` is the last commit
+    date on the default branch.
+not_found:
+- registry: npm
+  queried:
+  - ttd-workflows
+  - '@thetradedesk/ttd-workflows'
+  result: 404 — no first-party JavaScript/TypeScript SDK is published to npm
+- registry: nuget
+  queried:
+  - thetradedesk
+  result: no first-party .NET client library found

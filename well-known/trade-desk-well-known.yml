@@ -1,0 +1,125 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/* on every apis.yml host, every OpenAPI servers[] host, and the OAuth
+  issuer named by the MCP protected-resource metadata
+hosts:
+- host: https://api.thetradedesk.com
+  documents:
+  - path: /.well-known/oauth-protected-resource/mcp/platform-management
+    status: 200
+    file: trade-desk-oauth-protected-resource.json
+    spec: RFC 9728 OAuth 2.0 Protected Resource Metadata
+    note: Resource-scoped path. The bare /.well-known/oauth-protected-resource returns 401 — the Kong
+      gateway 401s every unmatched path on this host.
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+- host: https://auth.thetradedesk.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: trade-desk-openid-configuration.json
+    spec: OpenID Connect Discovery 1.0
+    note: Issuer named by the MCP protected-resource metadata. Publishes 92 scopes, PKCE S256, private_key_jwt,
+      device-code and CIBA grants.
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://ext-api.sb.thetradedesk.com
+  documents:
+  - path: /.well-known/oauth-protected-resource/mcp/platform-management
+    status: 200
+    note: Sandbox mirror of the same protected-resource document; not saved separately.
+- host: https://www.thetradedesk.com
+  documents:
+  - path: /llms.txt
+    status: 200
+    file: ../llms/trade-desk-llms.txt
+    spec: llms.txt
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 429
+    note: Cloudflare "Just a moment" interstitial — not a document. Treated as a miss.
+  - path: /.well-known/ai-plugin.json
+    status: 429
+    note: Cloudflare interstitial. Treated as a miss.
+  - path: /.well-known/agent-card.json
+    status: 429
+    note: Cloudflare interstitial. Treated as a miss.
+  - path: /.well-known/agent.json
+    status: 429
+    note: Cloudflare interstitial. Treated as a miss.
+- host: https://open.thetradedesk.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+    note: The docs SPA shell preloads <link rel="llms" href="/llms.txt"> but the path 404s — the link
+      is advertised and not served.
+- host: https://partner.thetradedesk.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://usw-data.adsrvr.org
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://unifiedid.com
+  documents:
+  - path: /robots.txt
+    status: 200
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+summary:
+  served:
+  - RFC 9728 oauth-protected-resource (api.thetradedesk.com, resource-scoped path)
+  - OpenID Connect discovery (auth.thetradedesk.com)
+  - llms.txt (www.thetradedesk.com)
+  absent:
+  - security.txt on every host
+  - api-catalog on every host
+  - A2A agent card on every host

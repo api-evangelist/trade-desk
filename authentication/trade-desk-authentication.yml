@@ -1,0 +1,103 @@
+generated: '2026-08-13'
+method: searched
+source: openapi/_original/trade-desk-data-api-swagger.json + provider docs
+docs:
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PlatformAuthentication
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/AuthenticationShortLive
+- https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/DataApiCallsAdvertiser
+summary:
+  types:
+  - apiKey
+  - oauth2
+  - openIdConnect
+  - http
+  api_key_in:
+  - header
+  api_key_names:
+  - TTD-Auth
+  - TtdSignature
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+  - deviceCode
+  - password
+  - implicit
+  - ciba
+  issuer: https://auth.thetradedesk.com
+schemes:
+- name: TTD-Auth
+  type: apiKey
+  in: header
+  parameter: TTD-Auth
+  primary: true
+  sources:
+  - openapi/_original/trade-desk-data-api-swagger.json
+  - openapi/trade-desk-advertiser-api-openapi.yml
+  description: Platform API token. Used by the Platform REST API, the Platform GraphQL API, the Workflows
+    API, the Data API and the OAK MCP server — one token type across the whole surface.
+  token_lifetime: One week to one year when generated in the OpenTTD Access Management UI; up to 24 hours
+    (1440 minutes) when generated via POST /v3/authentication.
+  issuance: https://open.thetradedesk.com/advertiser/access-management
+  rotation: Tokens cannot be updated. To change a lifetime you revoke, generate a new token, and replace
+    it in the integration. Short-lived tokens cannot be revoked at all — they expire only.
+  docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PlatformAuthentication
+- name: ShortLivedToken
+  type: http
+  scheme: custom
+  sources:
+  - https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/AuthenticationShortLive
+  description: 'POST /v3/authentication with Login + Password (and optional TokenExpirationInMinutes,
+    default 1440) returns {"Token": "..."} for use as the TTD-Auth header value. Maximum 24 hours. Documented
+    as non-revocable and intended for temporary or low-risk use, not production.'
+  endpoint: https://api.thetradedesk.com/v3/authentication
+- name: OpenIDConnect
+  type: openIdConnect
+  sources:
+  - https://auth.thetradedesk.com/.well-known/openid-configuration
+  openIdConnectUrl: https://auth.thetradedesk.com/.well-known/openid-configuration
+  description: Full OIDC provider fronting the platform. 92 scopes, RS256 id_token signing, PKCE (S256),
+    private_key_jwt client auth, device-code and CIBA grants. This is the authorization server named by
+    the MCP protected-resource metadata.
+  scopes: scopes/trade-desk-scopes.yml
+- name: OAuth2
+  type: oauth2
+  sources:
+  - https://api.thetradedesk.com/.well-known/oauth-protected-resource/mcp/platform-management
+  description: OAuth is offered for the OAK MCP server as the no-manual-token-management path; OIDC token
+    exchange is available on request for teams building applications on top of OAK.
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.thetradedesk.com/connect/authorize
+    tokenUrl: https://auth.thetradedesk.com/connect/token
+  - flow: clientCredentials
+    tokenUrl: https://auth.thetradedesk.com/connect/token
+- name: TtdSignature
+  type: apiKey
+  in: header
+  parameter: TtdSignature
+  deprecated: true
+  sources:
+  - https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/DataApiCallsAdvertiser
+  description: LEGACY Data API auth. HMAC-SHA1 base64 of the JSON request body keyed with the advertiser
+    secret key (audience data) or the data-provider secret key (offline conversions). The provider now
+    directs all Data API traffic to token authentication.
+- name: SinceraBearer
+  type: http
+  scheme: bearer
+  sources:
+  - https://open.thetradedesk.com/seller/docsApp/GuidesSeller/opensincera/doc/OpenSinceraGetStarted
+  description: 'OpenSincera API uses Authorization: Bearer with a personal API key retrieved from the
+    OpenSincera profile page. Separate account and separate credential from the Platform API.'
+  applies_to: https://open.sincera.io/api
+- name: None
+  type: none
+  sources:
+  - https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-track-realtimeconversion
+  description: The Real-Time Conversion Events endpoint (POST https://insight.adsrvr.org/track/realtimeconversion)
+    is documented as requiring no authentication.
+gaps:
+- No securityScheme is declared in any published OpenAPI — the Data API spec models TTD-Auth as a required
+  header PARAMETER on every operation instead of as a securityScheme, so machine clients get no auth affordance
+  from the contract.
+- No public scopes/permissions reference page; the 92 scopes are discoverable only from the OIDC discovery
+  document.

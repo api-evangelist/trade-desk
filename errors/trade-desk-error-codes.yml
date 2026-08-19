@@ -1,0 +1,53 @@
+generated: '2026-08-13'
+method: searched
+source: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+api: The Trade Desk Data API
+response_version: v2
+note: Data API v2 error codes, returned in the ErrorCode field of the response envelope and, per failed
+  row, in FailedLines[].ErrorCode. Version 1 is still the default and returns FailedLines only, with error
+  messaging that varies by endpoint — v2 is where the codes become consistent.
+envelope_field: ErrorCode
+error_codes:
+- status: 400
+  code: UnknownRequest
+  meaning: The requested resource could not be recognized.
+- status: 400
+  code: IncorrectContent
+  meaning: A field in the request body contains an invalid value.
+- status: 400
+  code: MissingData
+  meaning: A required field in the request body was absent or empty.
+- status: 400
+  code: SerializationFailed
+  meaning: Request body could not be deserialized - verify the JSON is valid and matches the expected
+    schema.
+- status: 401
+  code: AuthenticationFailed
+  meaning: The provided credentials could not be authenticated - verify credentials.
+- status: 401
+  code: InvalidToken
+  meaning: The provided token is invalid - verify token.
+- status: 403
+  code: IncorrectPermissions
+  meaning: The provided credentials lack the required permissions for the specified ID.
+- status: 403
+  code: AdvertiserMisconfigured
+  meaning: The provided AdvertiserId is not configured to send data on the requested resource.
+- status: 403
+  code: DataProviderMisconfigured
+  meaning: The provided DataProviderId is not configured to send data on the requested resource.
+- status: 403
+  code: MerchantMisconfigured
+  meaning: The provided MerchantId is not configured to send data on the requested resource.
+- status: 403
+  code: TargetingDataLimitReached
+  meaning: The maximum allowed targeting data elements limit for the specified advertiser/data provider
+    has been reached.
+- status: 404
+  code: EndpointNotConfigured
+  meaning: The requested endpoint is not configured to accept this type of request.
+- status: 413
+  code: MaxRequestSizeExceeded
+  meaning: Request payload exceeds the maximum allowed size.
+related:
+- errors/trade-desk-problem-types.yml

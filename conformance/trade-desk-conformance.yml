@@ -1,0 +1,99 @@
+generated: '2026-08-13'
+method: searched
+source: https://auth.thetradedesk.com/.well-known/openid-configuration; https://api.thetradedesk.com/.well-known/oauth-protected-resource/mcp/platform-management;
+  https://www.thetradedesk.com/trust/security; TTD OpenTTD developer docs
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: Provider publishes an OpenAPI 3.0.4 document at https://usw-data.adsrvr.org/swagger/v1/swagger.json
+- id: oauth2
+  conforms: true
+  evidence: authorization_endpoint/token_endpoint published; grant types include authorization_code, client_credentials,
+    refresh_token, device_code
+- id: oidc
+  conforms: true
+  evidence: OpenID Connect Discovery 1.0 document served at https://auth.thetradedesk.com/.well-known/openid-configuration;
+    RS256 id_token signing
+- id: rfc7636-pkce
+  conforms: true
+  evidence: 'code_challenge_methods_supported: [plain, S256]'
+- id: rfc9728-protected-resource-metadata
+  conforms: true
+  evidence: 200 at /.well-known/oauth-protected-resource/mcp/platform-management naming authorization_servers
+- id: rfc7662-token-introspection
+  conforms: true
+  evidence: introspection_endpoint https://auth.thetradedesk.com/connect/introspect
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint https://auth.thetradedesk.com/connect/revocation
+- id: rfc8628-device-authorization-grant
+  conforms: true
+  evidence: device_authorization_endpoint published; urn:ietf:params:oauth:grant-type:device_code in grant_types_supported
+- id: ciba
+  conforms: true
+  evidence: urn:openid:params:grant-type:ciba in grant_types_supported
+- id: mcp
+  conforms: true
+  evidence: Open Agentic Kit remote MCP server at https://api.thetradedesk.com/mcp/platform-management
+    (private beta)
+- id: graphql
+  conforms: true
+  evidence: Platform GraphQL API at https://api.thetradedesk.com/graphql with documented introspection
+    support
+- id: rfc6585-additional-http-status-codes
+  conforms: true
+  evidence: 429 Too Many Requests documented with Retry-After; provider cites RFC 6585 directly in its
+    rate-limit docs
+- id: rfc9457-problem-details
+  conforms: partial
+  evidence: The OpenTTD docs content service returns application/problem+json on 404. The Platform and
+    Data APIs do NOT — they return a proprietary JSON envelope (FailedLines / ErrorCode / Message).
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No Sunset or Deprecation header documented. Deprecation is signalled by HTTP 410 Gone plus
+    a dated upcoming-changes page.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key header or replay contract is documented anywhere in the public developer
+    docs.
+- id: asyncapi
+  conforms: false
+  evidence: No AsyncAPI document and no published webhook catalog. Event flow is inbound-only (Real-Time
+    Conversion Events ingestion).
+- id: a2a
+  conforms: false
+  evidence: No agent card at /.well-known/agent-card.json or /.well-known/agent.json on any host probed.
+- id: iab-tech-lab-uid2
+  conforms: true
+  evidence: Unified ID 2.0 is open-source and governed by the IAB Tech Lab; The Trade Desk seeded it and
+    operates prod.uidapi.com
+- id: iab-openrtb
+  conforms: true
+  evidence: Omnichannel DSP bidding on OpenRTB inventory; the company also maintains forks of Prebid.js
+    and prebid-server in its GitHub org
+- id: soc2-type2
+  conforms: true
+  evidence: https://www.thetradedesk.com/trust/security — annually audited against AICPA SSAE18 SOC 2
+    by an independent auditing firm
+- id: soc1
+  conforms: true
+  evidence: https://www.thetradedesk.com/trust/security — SSAE18 SOC 1, audited annually alongside SOX
+- id: sox-404
+  conforms: true
+  evidence: 'https://www.thetradedesk.com/trust/security — annual Sarbanes-Oxley Section 404 audit (NASDAQ:
+    TTD)'
+- id: pci-dss
+  conforms: partial
+  evidence: https://www.thetradedesk.com/trust/security — self-attestation questionnaire (SAQ) version
+    A; does not directly process card data
+- id: iso-27001
+  conforms: aligned
+  evidence: https://www.thetradedesk.com/trust/security — information security program is "based on ISO/IEC
+    27001"; the page claims alignment, not certification
+- id: nist-800-53
+  conforms: aligned
+  evidence: https://www.thetradedesk.com/trust/security — named as a framework followed
+- id: gdpr
+  conforms: true
+  evidence: EUID (GDPR-aligned European Unified ID), DPA at https://www.thetradedesk.com/legal/dpa-data-processing-agreement,
+    GDPR-region policy restrictions enforced in the Data API

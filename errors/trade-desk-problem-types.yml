@@ -1,0 +1,112 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/_original/trade-desk-data-api-swagger.json + https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ReturnCodes
+format: proprietary
+format_note: Neither the Platform API nor the Data API uses RFC 9457 application/problem+json. Data API
+  errors come back as a proprietary envelope; Platform API errors as a JSON body described only as "a
+  JSON body describing the error". The only surface observed returning application/problem+json is the
+  OpenTTD documentation content service.
+envelope:
+  data_api_v2:
+    fields:
+    - ErrorCode
+    - Message
+    - FailedLines
+    note: v2 returns a consistent envelope across endpoints. v1 (the default) returns FailedLines only
+      and varies by endpoint.
+  platform_api:
+    note: HTTP status code plus a JSON body describing the error.
+http_status_codes:
+- status: 200
+  message: OK
+  description: The request was successful.
+- status: 240
+  message: No Content
+  description: The request was successful, but there is no content to return.
+  note: NON-STANDARD. 240 is not an IANA-registered HTTP status code; generic HTTP clients will not classify
+    it as a success.
+- status: 400
+  message: Bad Request
+  description: The request did not contain all required input, had malformed syntax, or the included input
+    failed validation.
+- status: 401
+  message: Unauthorized
+  description: The user does not have valid authentication credentials to access the requested resource.
+- status: 403
+  message: Forbidden
+  description: The user does not have access to this endpoint or entity; or the endpoint or entity does
+    not exist.
+- status: 404
+  message: Not Found
+  description: The requested resource has not been found.
+- status: 409
+  message: Conflict
+  description: The request conflicts with the current state of the server.
+- status: 410
+  message: Gone
+  description: The request uses a deprecated endpoint or property.
+  note: This is The Trade Desk's deprecation signal in place of RFC 8594 Sunset/Deprecation headers.
+- status: 413
+  message: Content Too Large
+  description: Request payload exceeds the maximum allowed size.
+- status: 429
+  message: Too Many Requests
+  description: The endpoint rate limit was exceeded. Honour Retry-After.
+- status: 500
+  message: Internal Server Error
+  description: The server encountered an unexpected condition.
+- status: 503
+  message: Service Unavailable
+  description: Temporary overload. Use the Retry-After header as guidance on when to retry.
+problems:
+- status: 400
+  title: Bad Request - Invalid JSON, missing items, advertiser not configured, or policy restrictions
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 401
+  title: Unauthorized - Invalid or missing authentication token
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 403
+  title: Forbidden - Cannot create new targeting data for this advertiser
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 413
+  title: Request Entity Too Large - Request size exceeds the allowed limit
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 429
+  title: Too Many Requests - Rate limit exceeded
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 500
+  title: Internal Server Error - Unexpected server error
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 503
+  title: Service Unavailable - Handler disabled or request dropped
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestAdvertiserData
+- status: 400
+  title: Bad Request - Invalid JSON, missing items, data provider not configured, or policy restrictions
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestThirdPartyData
+- status: 403
+  title: Forbidden - Cannot create new targeting data for this data provider
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestThirdPartyData
+- status: 403
+  title: Forbidden - Cannot upload IP address data for this advertiser
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestFirstPartyIPAddressData
+- status: 403
+  title: Forbidden - Cannot upload IP address data for this data provider
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestThirdPartyIPAddressData
+- status: 403
+  title: Forbidden - Cannot create offline conversion data for this data provider
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#IngestOfflineConversionData
+- status: 403
+  title: Forbidden - Cannot process data subject request for this advertiser
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#DataSubjectRequestAdvertiserData
+- status: 400
+  title: Bad Request - Invalid JSON, missing items, merchant not configured, or policy restrictions
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#DataSubjectRequestMerchantData
+- status: 403
+  title: Forbidden - Cannot process data subject request for this merchant
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#DataSubjectRequestMerchantData
+- status: 403
+  title: Forbidden - Cannot process data subject request for this data provider
+  source_operation: openapi/_original/trade-desk-data-api-swagger.json#DataSubjectRequestThirdPartyData
+docs:
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ReturnCodes
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/GqlApiErrors

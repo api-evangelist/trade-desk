@@ -1,0 +1,31 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for The Trade Desk TTD Data Advertiser ThirdParty API
+  version: 1.0.0
+extends: openapi/trade-desk-thirdparty-api-openapi.yml
+x-generated: '2026-08-13'
+x-method: generated
+x-source: apis.yml + provider docs at open.thetradedesk.com
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: trade-desk
+    x-apievangelist-artifacts:
+      authentication: authentication/trade-desk-authentication.yml
+      conventions: conventions/trade-desk-conventions.yml
+      errors: errors/trade-desk-problem-types.yml
+      error-codes: errors/trade-desk-error-codes.yml
+      rate-limits: rate-limits/trade-desk-rate-limits.yml
+      lifecycle: lifecycle/trade-desk-lifecycle.yml
+      sandbox: sandbox/trade-desk-sandbox.yml
+    x-apievangelist-note: The Data API declares TTD-Auth as a required header parameter rather than a
+      securityScheme; the block below records the auth contract the provider documents.
+- target: $
+  update:
+    x-security-schemes-missing:
+      TTD-Auth:
+        type: apiKey
+        in: header
+        name: TTD-Auth
+        description: Platform API token. Recommended addition — the published spec models this as a per-operation
+          header parameter, so no securityScheme is declared.

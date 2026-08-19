@@ -1,0 +1,47 @@
+# The Trade Desk
+
+> From brand building to performance marketing, our omnichannel platform was built with one goal: helping you reach yours.
+
+## Company
+- [Company](https://www.thetradedesk.com/about-us)
+- [Press releases & media coverage](https://www.thetradedesk.com/press-room)
+- [Our leadership](https://www.thetradedesk.com/about-us/our-leadership)
+- [Careers](https://careers.thetradedesk.com/)
+- [Investors](https://investors.thetradedesk.com/overview/default.aspx)
+- [Office locations](https://www.thetradedesk.com/office-locations)
+
+## Platform
+- [Platform](https://www.thetradedesk.com/our-demand-side-platform)
+- [Omnichannel advertising](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising)
+- [Identity solutions](https://www.thetradedesk.com/our-demand-side-platform/identity-solutions)
+- [Audience targeting](https://www.thetradedesk.com/our-demand-side-platform/audience-targeting)
+- [Measurement & optimization](https://www.thetradedesk.com/our-demand-side-platform/advertising-campaign-performance-measurement)
+- [Artificial intelligence](https://www.thetradedesk.com/our-demand-side-platform/ai-artificial-intelligence)
+- [Retail data](https://www.thetradedesk.com/our-demand-side-platform/retail-media)
+- [OpenTTD](https://www.thetradedesk.com/openttd)
+- [Programmatic buying solutions](https://www.thetradedesk.com/our-demand-side-platform/programmatic-buying-solutions)
+- [Partner directory](https://www.thetradedesk.com/partner-directory)
+- [OpenPath](https://www.thetradedesk.com/our-demand-side-platform/openpath)
+- [UID2](https://unifiedid.com/)
+- [Audio](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/audio)
+- [CTV / OTT](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/connected-tv)
+- [Digital out-of-home](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/digital-out-of-home)
+- [Display](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/display)
+- [Mobile](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/mobile)
+- [Native](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/native)
+- [Video](https://www.thetradedesk.com/our-demand-side-platform/omnichannel-advertising/video)
+
+## Resources & Insights
+- [Resources & Insights](https://www.thetradedesk.com/resources)
+- [Case studies](https://www.thetradedesk.com/case-studies)
+- [Insights](https://www.thetradedesk.com/insights)
+- [Edge Academy](https://edgeacademy.thetradedesk.com/)
+- [The Current](https://www.thecurrent.com/)
+- [Developer documentation](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/guides/doc/GuidesAdvertiser)
+- [Glossary](https://www.thetradedesk.com/glossary)
+- [Traders of Tomorrow](https://www.thetradedesk.com/resources/our-platform-resource-desk)
+- [Omnichannel advertising](https://www.thetradedesk.com/resources/omnichannel)
+- [Connected TV](https://www.thetradedesk.com/resources/connected-tv-resource-desk)
+- [Data and measurement](https://www.thetradedesk.com/resources/data-measurement)
+- [Retail media](https://www.thetradedesk.com/resources/retail-resource-desk)
+- [Programmatic for partners](https://www.thetradedesk.com/resources/partners)

@@ -1,0 +1,44 @@
+generated: '2026-08-13'
+method: searched
+source: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKs
+note: The only client-side embeddable surface The Trade Desk ships is OpenPass, its single-sign-on product
+  for publishers. These are drop-in UI elements rendered in the publisher's own page or app, distinct
+  from the server-side SDKs in packages/. No embeddable dashboard or reporting widget is published for
+  the DSP itself.
+families:
+- name: OpenPass JavaScript
+  platform: web
+  components:
+  - name: Sign-In Button
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKJSSignInButton
+  - name: Inline Sign-In Form
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKJSInlineSignInForm
+  - name: Quick Auth
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKJSQuickAuth
+  - name: Manual click handler
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKJSManualAddClickHandler
+  - name: Device Authorization Grant
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKJSDeviceAuthGrant
+- name: OpenPass native and CTV
+  platform: mobile / connected TV
+  components:
+  - name: Android SDK
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKAndroidGuide
+  - name: Android TV SDK
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKAndroidTVGuide
+  - name: iOS SDK
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKiOSGuide
+  - name: tvOS SDK
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKtvOSGuide
+  - name: Unity SDK
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKUnityGuide
+  - name: Roku TV SDK
+    docs: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/openpass/doc/OpenPassSDKRokuTVGuide
+- name: Conversion event tag templates
+  platform: Google Tag Manager
+  components:
+  - name: Client-side GTM template
+    repository: https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager
+    license: Apache-2.0
+  - name: Server-side GTM template
+    repository: https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager

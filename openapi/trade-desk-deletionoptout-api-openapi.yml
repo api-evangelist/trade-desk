@@ -25,6 +25,17 @@ info:
     - [Merchant](https://open.thetradedesk.com/provider/docsApp/GuidesProvider/retail/doc/post-data-deletion-optout-merchant)
 
     '
+servers:
+- url: https://usw-data.adsrvr.org
+  description: US West Coast data center
+- url: https://use-data.adsrvr.org
+  description: US East Coast data center
+- url: https://euw-data.adsrvr.org
+  description: UK/EU data center
+- url: https://sin-data.adsrvr.org
+  description: APAC data center
+- url: https://tok-data.adsrvr.org
+  description: Tokyo data center
 tags:
 - name: DeletionOptOut
 paths:
@@ -55,7 +66,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AdvertiserDsrResponse'
         '400':
-          description: Bad Request - Invalid JSON, missing items, advertiser not configured, or policy restrictions
+          description: Bad Request - Invalid JSON, missing items, advertiser not configured, or policy
+            restrictions
           content:
             application/json:
               schema:
@@ -88,7 +100,8 @@ paths:
     post:
       tags:
       - DeletionOptOut
-      summary: Delete IDs shared with The Trade Desk via a product catalog for the specified merchant ID.
+      summary: Delete IDs shared with The Trade Desk via a product catalog for the specified merchant
+        ID.
       operationId: DataSubjectRequestMerchantData
       parameters:
       - name: TTD-Auth
@@ -167,7 +180,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ThirdPartyDsrResponse'
         '400':
-          description: Bad Request - Invalid JSON, missing items, data provider not configured, or policy restrictions
+          description: Bad Request - Invalid JSON, missing items, data provider not configured, or policy
+            restrictions
           content:
             application/json:
               schema:

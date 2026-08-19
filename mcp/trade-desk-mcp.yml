@@ -1,0 +1,99 @@
+generated: '2026-08-13'
+method: searched
+status: published
+source: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted
+name: Open Agentic Kit (OAK)
+description: The Trade Desk's MCP-based access to Koa Agents, announced in the Platform API release notes
+  on 2026-08-10 and available to select partners in private beta. Rather than exposing one tool per API
+  endpoint, OAK exposes workflow-level capabilities over the platform data and actions.
+deployment:
+  mode: remote
+  endpoint: https://api.thetradedesk.com/mcp/platform-management
+  auth: oauth
+  verified: probed
+  note: Endpoint copied verbatim from the provider's own mcpServers configuration example in the Get started
+    guide. POST tools/list and initialize both return HTTP 401 {"message":"Unauthorized"} from the Kong
+    gateway anonymously — the live tool schemas require an approved private-beta credential. Auth recorded
+    as oauth because the resource publishes RFC 9728 metadata naming https://auth.thetradedesk.com; a
+    TTD-Auth API-key header is the documented default and OIDC is available on request.
+auth_methods:
+- method: api-key
+  header: TTD-Auth
+  description: Default. Platform API token generated in OpenTTD Access Management.
+  docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PlatformAuthentication
+- method: oauth
+  description: OAuth, described by the provider as "the simplest possible connection path, with no manual
+    token management."
+  authorization_servers:
+  - https://auth.thetradedesk.com
+  protected_resource_metadata: https://api.thetradedesk.com/.well-known/oauth-protected-resource/mcp/platform-management
+  scopes_supported:
+  - openid
+  - profile
+  - email
+  - offline_access
+  - ttdapi
+  bearer_methods_supported:
+  - header
+- method: oidc
+  description: OIDC token exchange for teams building their own applications on top of OAK. Available
+    on request.
+capabilities:
+- name: Knowledge Search
+  status: available
+  access: read-only
+  description: Search The Trade Desk documentation and knowledge base in real time.
+- name: Data Retrieval
+  status: available
+  access: read-only
+  description: Pull live and historical data across campaigns, ad groups, creatives, audiences, seeds
+    and deals — pacing metrics, performance data, audience insights.
+- name: Reporting
+  status: available
+  access: read-only
+  description: Retrieve large volumes of performance data and compare trends across time periods.
+- name: Configuration & Management
+  status: h2-2026
+  access: write
+  description: 'Create and modify campaigns, ad groups, creatives, audiences and deals. Two-step flow:
+    the agent proposes, the human confirms, then it executes; confirmation is enforced at the platform
+    level. Requires a write-scoped token.'
+- name: Insights
+  status: h2-2026
+  access: read-only
+  description: Koa-powered analysis of campaign performance.
+- name: Troubleshooting
+  status: h2-2026
+  access: read-only
+  description: Identifies campaign issues and surfaces actionable fixes powered by Koa.
+tools: []
+tools_note: No tool list is recorded. tools/list is auth-gated (401) and the provider publishes no tool
+  inventory in its docs — OAK is documented at the capability level, not the tool level. Recording invented
+  tool names here would fabricate the agent surface, so the list is deliberately empty until an authenticated
+  introspection is possible.
+access:
+  availability: private beta
+  how_to_get_access: Contact your account representative at The Trade Desk to register interest.
+clients_named_by_provider:
+- Claude Desktop
+- Claude Code
+- Cursor
+- ChatGPT
+- Gemini
+docs:
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitOverview
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted
+x-evidence:
+- url: https://api.thetradedesk.com/mcp/platform-management
+  method: POST tools/list
+  http_status: 401
+  fetched: '2026-08-13'
+- url: https://api.thetradedesk.com/.well-known/oauth-protected-resource/mcp/platform-management
+  http_status: 200
+  fetched: '2026-08-13'
+- url: https://auth.thetradedesk.com/.well-known/openid-configuration
+  http_status: 200
+  fetched: '2026-08-13'
+- url: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/McpOpenAgenticKitGettingStarted
+  http_status: 200
+  fetched: '2026-08-13'

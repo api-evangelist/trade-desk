@@ -1,0 +1,71 @@
+generated: '2026-08-13'
+method: searched
+source:
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/RateLimits
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/GqlApiRateLimits
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ReturnCodes
+limit_count: 0
+summary: The Trade Desk enforces per-endpoint, per-user-account rate limits but publishes NO numeric limit
+  for any endpoint. The docs describe the mechanism, the response signal and the mitigation strategy in
+  detail, then route every "what is my actual limit" question to a Technical Account Manager. limit_count
+  is 0 because zero numeric limits are published — that is the finding, not a gap in this harvest.
+limits: []
+mechanism:
+  scope:
+  - per-endpoint
+  - per-user-account
+  - per-operation (GraphQL)
+  - group throttling across multiple user accounts under one client
+  window: usually one minute
+  dynamic: System-level usage is monitored and can trigger further dynamic reductions to protect the platform.
+    High-cost GraphQL requests may be dynamically adjusted during periods of high demand.
+  ui_counts: Platform UI usage counts against the same limits — the UI calls the API with the same account
+    credentials.
+  rest_vs_graphql: Limits are enforced the same way for REST and GraphQL, but the REST call count and
+    the GraphQL call count are independent of each other.
+  increase: Contact your Technical Account Manager.
+response_signals:
+  status_code: 429
+  status_description: Too Many Requests
+  response_headers:
+  - header: Retry-After
+    description: Seconds to wait before retrying. The provider explicitly instructs clients to inspect
+      it and extract the value in seconds.
+    documented: true
+  headers_absent:
+  - X-RateLimit-Limit
+  - X-RateLimit-Remaining
+  - X-RateLimit-Reset
+  - RateLimit-Limit
+  - RateLimit-Remaining
+  - RateLimit-Reset
+  headers_absent_note: No quota-disclosure headers are documented. An agent can learn it has been throttled,
+    and for how long, but never how much budget it has left.
+  also:
+  - status: 503
+    header: Retry-After
+    description: Service Unavailable — the docs direct clients to use Retry-After as guidance on when
+      to retry.
+client_guidance:
+- Limit concurrency to four callers per endpoint (REST) or per operation (GraphQL).
+- 'Fixed delay: wait one minute after a failed call before retrying.'
+- 'Exponential backoff: Delay = Min(max_delay, base_delay * 2 ^ retrycount).'
+- Cache data that does not change frequently (industry categories, first/third-party DMP lookups, geosegment
+  queries).
+- Use delta endpoints and delta mutations to reduce execution time and call frequency.
+- Batch GraphQL mutations rather than issuing them one at a time.
+- 'On POST /v3/dmp/thirdparty/advertiser set ExcludeTotalCounts: true, scope with BrandIds or ThirdPartyDataIds,
+  and keep PageSize at or below 1000.'
+graphql_complexity:
+  documented: true
+  docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/GqlApiErrors
+  note: GraphQL additionally enforces query complexity limits on nested queries, documented separately
+    from rate limits.
+request_size_limits:
+- api: Real-Time Conversion Events
+  limit: 28.6 MB per request
+  note: No limit on the number of events per request.
+  source: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-track-realtimeconversion
+- api: Data API
+  limit: unpublished
+  signal: HTTP 413 with error code MaxRequestSizeExceeded

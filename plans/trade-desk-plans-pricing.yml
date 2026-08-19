@@ -1,0 +1,31 @@
+generated: '2026-08-13'
+method: searched
+source:
+- https://www.thetradedesk.com/our-demand-side-platform
+- https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/api/doc/ApiPlatformGetStarted
+- https://open.thetradedesk.com/seller/docsApp/GuidesSeller/opensincera/doc/OpenSinceraGetStarted
+plan_count: 0
+model: enterprise-contract
+note: 'The Trade Desk publishes no pricing page, no plan tiers and no rate card. Platform access is a
+  negotiated enterprise contract: the documented onboarding path is "provide your details to your Account
+  Manager or Technical Account Manager", sign contract paperwork, and receive API credentials. The docs
+  state plainly that "API services typically require a setup fee" and direct the reader to a Business
+  Development or Client Services lead. Platform spend itself is a percentage-of-media model disclosed
+  in TTD''s SEC filings (NASDAQ: TTD), not on a pricing page.'
+plans: []
+free_surfaces:
+- name: OpenSincera API
+  price: 0
+  currency: USD
+  description: Media telemetry over 400,000+ publishers, described by the provider as "provided free of
+    charge by The Trade Desk". Self-serve signup with a company email address; bearer token from the profile
+    page.
+  signup: https://open.sincera.io/sign_up
+  source: https://open.thetradedesk.com/seller/docsApp/GuidesSeller/opensincera/doc/OpenSinceraGetStarted
+- name: Unified ID 2.0
+  price: 0
+  currency: USD
+  description: Open-source identity framework governed by the IAB Tech Lab. Licensing terms at https://www.thetradedesk.com/legal/uid2licenses.
+  source: https://unifiedid.com
+quotas:
+  note: Rate limits exist but no numeric quota is attached to any tier — see rate-limits/trade-desk-rate-limits.yml.

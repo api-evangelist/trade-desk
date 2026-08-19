@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TTD Data IPAddress API",
+    "version": "v0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IPAddress",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload first-party IP address data for the specified ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://usw-data.adsrvr.org/data/firstpartyipaddress",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload first-party IP address data for the specified ID."
+        },
+        {
+          "info": {
+            "name": "Upload third-party IP address data for the specified ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://usw-data.adsrvr.org/data/thirdpartyipaddress",
+            "headers": [
+              {
+                "name": "TTD-Auth",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload third-party IP address data for the specified ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,153 @@
+generated: '2026-08-13'
+method: probed
+source: https://auth.thetradedesk.com/.well-known/openid-configuration
+docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/PlatformAuthentication
+note: Scopes are read from The Trade Desk's live OpenID Connect discovery document, not from an OpenAPI
+  — none of the published Data API specs declare an oauth2 securityScheme. The provider does not publish
+  a scopes/permissions reference page, so descriptions are supplied only where the scope name is unambiguous;
+  the rest are recorded verbatim with no invented description.
+schemes:
+- name: OpenIDConnect
+  source: https://auth.thetradedesk.com/.well-known/openid-configuration
+  issuer: https://auth.thetradedesk.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.thetradedesk.com/connect/authorize
+    tokenUrl: https://auth.thetradedesk.com/connect/token
+  - flow: clientCredentials
+    tokenUrl: https://auth.thetradedesk.com/connect/token
+  - flow: deviceCode
+    deviceAuthorizationUrl: https://auth.thetradedesk.com/connect/deviceauthorization
+    tokenUrl: https://auth.thetradedesk.com/connect/token
+  pkce:
+  - plain
+  - S256
+  token_endpoint_auth_methods:
+  - client_secret_basic
+  - client_secret_post
+  - private_key_jwt
+  grant_types:
+  - authorization_code
+  - client_credentials
+  - refresh_token
+  - implicit
+  - password
+  - urn:ietf:params:oauth:grant-type:device_code
+  - urn:openid:params:grant-type:ciba
+  - delegated
+  - urn:ietf:params:oauth:grant-type:azure-token-exchange
+  - urn:ttd:params:oauth:grant-type:service-account
+mcp_resource_scopes:
+  resource: https://api.thetradedesk.com/mcp/platform-management
+  scopes:
+  - openid
+  - profile
+  - email
+  - offline_access
+  - ttdapi
+  source: https://api.thetradedesk.com/.well-known/oauth-protected-resource/mcp/platform-management
+scope_count: 91
+scopes:
+- scope: openid
+  description: OpenID Connect authentication.
+- scope: profile
+  description: Profile claims.
+- scope: email
+  description: Email claim.
+- scope: offline_access
+  description: Issue a refresh token.
+- scope: ttdapi
+  description: Access to The Trade Desk Platform API.
+- scope: activity.read_write
+- scope: ad_format.read
+- scope: ad_technology.read
+- scope: adgroup.activity.read
+- scope: adgroup.basic_read
+- scope: adgroup.basic_update
+- scope: adgroup.basic_write
+- scope: adgroup.delta.read
+- scope: adgroup.read_write
+- scope: advertiser.delta.read
+- scope: advertiser.overview.read
+- scope: advertiser.read
+- scope: advertiser.read_write
+- scope: advertiser_targeting.read
+- scope: audience.basic_read
+- scope: audience_workflows.write
+- scope: bidlist.basic_write
+- scope: bidlist.read_write
+- scope: billing_and_fees.write
+- scope: campaign.activity.read
+- scope: campaign.basic_read
+- scope: campaign.basic_write
+- scope: campaign.delta.read
+- scope: campaign.read_write
+- scope: campaign.write
+- scope: campaign_flight.create
+- scope: campaign_flight.read
+- scope: category.read
+- scope: category_taxonomy.read
+- scope: comscore.read
+- scope: content.read
+- scope: contract.delta.read
+- scope: contract.partner.read
+- scope: contract.read_write
+- scope: contract_group.read_write
+- scope: creative.delta.read
+- scope: creative.read
+- scope: creative.read_write
+- scope: creative.write
+- scope: currency.read
+- scope: data_group.read
+- scope: delivery_profile.read
+- scope: delivery_profile.read_write
+- scope: delta.read
+- scope: device_make_model.read
+- scope: direct_url_targeting_category.read
+- scope: fees.basic_write
+- scope: fees.read
+- scope: fees.read_write
+- scope: first_party.read
+- scope: frequency_counter.update
+- scope: geo_segment.read
+- scope: label.read_write
+- scope: language.read
+- scope: metadata_and_queries.write
+- scope: mobile_application.read
+- scope: mobile_carrier.read
+- scope: my_reports.read_write
+- scope: nielsen.reporting_countries.read
+- scope: partner.overview.read
+- scope: partner.read
+- scope: retail.write
+- scope: right_media_offer_type.read
+- scope: seller.read
+- scope: supply_vendor.read
+- scope: supply_vendor_publisher.read
+- scope: targeting.write
+- scope: tracking_tag.read
+- scope: universal_forecasting.generate
+- scope: weather_condition.read
+- scope: ttdui_refresh
+  description: Refresh the platform UI session.
+- scope: openpath
+  description: OpenPath access.
+- scope: openpath_ui
+- scope: openpass
+  description: OpenPass access.
+- scope: ttdops
+- scope: ttd_info
+- scope: ttdapi_elevated
+  description: Elevated Platform API access.
+- scope: manage_api_tokens
+  description: Create and revoke API tokens.
+- scope: ttd-dev-portal.access
+  description: Access to the developer portal.
+- scope: bidlist.read
+- scope: frequency_config.read
+- scope: datarate.read_write
+- scope: claudeai
+- scope: applications
+- scope: segment.update
+- scope: offline_access
+  description: Issue a refresh token.

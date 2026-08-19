@@ -1,0 +1,64 @@
+generated: '2026-08-13'
+method: searched
+source:
+- https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/ReleaseNotes
+- https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/UpgradeSupport
+- https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ReturnCodes
+versioning:
+  scheme: uri-path
+  current: v3
+  base: https://api.thetradedesk.com/v3/
+  other:
+  - api: Data API
+    scheme: response-version
+    current: v2
+    note: v1 remains the default response version; v2 is opt-in and gives a consistent error envelope.
+  - api: Workflows API
+    scheme: path-prefix
+    current: https://api.thetradedesk.com/workflows
+  - api: GraphQL
+    scheme: schema-evolution
+    note: Single /graphql endpoint; capability is added incrementally per product.
+  docs: https://open.thetradedesk.com/advertiser/docsApp/Foundations/resources/doc/ApiUsageGuidelines
+deprecation:
+  policy_url: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/UpgradeSupport
+  archives_url: https://open.thetradedesk.com/advertiser/docsApp/AdvertiserNews/news/doc/UpgradeSupportArchives
+  sunset_header: false
+  deprecation_header: false
+  signal: HTTP 410 Gone — "the request uses a deprecated endpoint or property"
+  process: Deprecations are announced on a dated "Platform API upcoming changes and schedules" page, grouped
+    by quarter, each carrying an effective date, a change summary and an explicit "action required" block.
+    Past changes move to an archives page. Announcements typically land one or more quarters ahead of
+    the effective date.
+  recent_examples:
+  - effective: '2026-09-07'
+    change: 'Scheduled reports: new download URL format'
+  - effective: '2026-07-01'
+    change: Adbug page quality fields deprecation
+  - effective: '2026-06-17'
+    change: Report download links now require an API token
+  - effective: '2026-05-22'
+    change: Realytics measurement deprecation
+  - effective: '2026-05-06'
+    change: Report column deprecation
+platform_generations:
+- name: Kokai
+  status: current
+  note: Current flagship platform generation.
+- name: Solimar
+  status: end-of-support
+  note: Predecessor. Campaign creation for Solimar was slated for deprecation; the docs direct all partners
+    to migrate to Kokai.
+sla:
+  url: null
+  uptime_target: null
+  note: No public SLA or uptime commitment is published. Availability terms sit inside the negotiated
+    platform agreement.
+status_page: null
+status_page_note: No public status page. status.thetradedesk.com does not resolve, and neither the developer
+  docs nor the trust center link one. Incident communication appears to run through the Technical Account
+  Manager relationship. https://www.thetradedesk.com/trust/security-bulletins carries security bulletins,
+  not service status.
+deprecated_operations: []
+deprecated_operations_note: 'No operation in any published OpenAPI carries deprecated: true.'
+changelog: changelog/trade-desk-changelog.yml

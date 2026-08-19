@@ -1,0 +1,586 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/_original/trade-desk-data-api-swagger.json
+scope: The Data API only. The Trade Desk publishes no OpenAPI for the Platform API, the Workflows API
+  or the GraphQL schema, so the campaign / ad group / creative / advertiser core of the platform cannot
+  be derived here — it is real, it is just not machine-readable in public.
+root_entities:
+- AdvertiserDataRequest
+- ThirdPartyDataRequest
+- OfflineConversionDataRequest
+- AdvertiserDsrRequest
+- ThirdPartyDsrRequest
+- MerchantDsrRequest
+id_types:
+- id: TDID
+  description: The Trade Desk 36-character GUID for a user.
+- id: DAID
+  description: Raw device ID (IDFA / AAID) in 36-character GUID format.
+- id: UID2
+  description: Raw Unified ID 2.0 value. Case-sensitive.
+- id: UID2Token
+  description: Encrypted UID2 advertising token.
+- id: EUID
+  description: Raw European Unified ID value.
+- id: EUIDToken
+  description: Encrypted EUID advertising token.
+- id: RampID
+  description: LiveRamp RampID (49 or 70 characters), mapped specifically for The Trade Desk.
+- id: ID5
+  description: ID5 identifier. Europe only, decrypted form.
+- id: netID
+  description: 70-character Base64 netID. Europe only.
+- id: FirstId
+  description: First-id first-party cookie, typically French publishers.
+- id: UtiqId
+  description: Utiq identifier. Europe only.
+id_types_source: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+entity_count: 39
+relationship_count: 31
+relationships:
+- from: AdvertiserDataItem
+  to: AdvertiserData
+  type: has_many
+  via: Data
+- from: AdvertiserDataRequest
+  to: AdvertiserDataItem
+  type: has_many
+  via: Items
+- from: AdvertiserDataServerResponse
+  to: AdvertiserDataServerResponseLine
+  type: has_many
+  via: FailedLines
+- from: AdvertiserDataServerResponseLine
+  to: AdvertiserDataResponseErrorCode
+  type: has_one
+  via: ErrorCode
+- from: AdvertiserDsrFailedLine
+  to: DsrErrorCode
+  type: has_one
+  via: ErrorCode
+- from: AdvertiserDsrRequest
+  to: PartnerDsrDataItem
+  type: has_many
+  via: Items
+- from: AdvertiserDsrRequest
+  to: PartnerDsrRequestType
+  type: has_one
+  via: RequestType
+- from: AdvertiserDsrResponse
+  to: AdvertiserDsrFailedLine
+  type: has_many
+  via: FailedLines
+- from: IPAddressData
+  to: ExpandedIpAddress
+  type: has_many
+  via: ExpandedIpAddresses
+- from: IPAddressDataItem
+  to: IPAddressData
+  type: has_many
+  via: Data
+- from: IPAddressDataRequest
+  to: IPAddressDataItem
+  type: has_many
+  via: Items
+- from: IPAddressDataServerResponse
+  to: IPAddressDataServerResponseLine
+  type: has_many
+  via: FailedLines
+- from: IPAddressDataServerResponseLine
+  to: IPAddressDataResponseErrorCode
+  type: has_one
+  via: ErrorCode
+- from: MerchantDsrFailedLine
+  to: DsrErrorCode
+  type: has_one
+  via: ErrorCode
+- from: MerchantDsrRequest
+  to: PartnerDsrDataItem
+  type: has_many
+  via: Items
+- from: MerchantDsrRequest
+  to: PartnerDsrRequestType
+  type: has_one
+  via: RequestType
+- from: MerchantDsrResponse
+  to: MerchantDsrFailedLine
+  type: has_many
+  via: FailedLines
+- from: OfflineConversionDataItem
+  to: RealTimeConversionEventLineItem
+  type: has_many
+  via: LineItems
+- from: OfflineConversionDataItem
+  to: RealTimeConversionEventsPrivacySetting
+  type: has_many
+  via: PrivacySettings
+- from: OfflineConversionDataRequest
+  to: OfflineConversionDataItem
+  type: has_many
+  via: Items
+- from: OfflineConversionDataServerResponse
+  to: OfflineConversionDataServerResponseLine
+  type: has_many
+  via: FailedLines
+- from: OfflineConversionDataServerResponseLine
+  to: OfflineConversionDataResponseErrorCode
+  type: has_one
+  via: ErrorCode
+- from: OfflineConversionDataServerResponseLine
+  to: OfflineConversionDataItem
+  type: has_one
+  via: OriginalRequest
+- from: ThirdPartyDataItem
+  to: ThirdPartyData
+  type: has_many
+  via: Data
+- from: ThirdPartyDataRequest
+  to: ThirdPartyDataItem
+  type: has_many
+  via: Items
+- from: ThirdPartyDataServerResponse
+  to: ThirdPartyDataServerResponseLine
+  type: has_many
+  via: FailedLines
+- from: ThirdPartyDataServerResponseLine
+  to: ThirdPartyDataResponseErrorCode
+  type: has_one
+  via: ErrorCode
+- from: ThirdPartyDsrFailedLine
+  to: DsrErrorCode
+  type: has_one
+  via: ErrorCode
+- from: ThirdPartyDsrRequest
+  to: PartnerDsrDataItem
+  type: has_many
+  via: Items
+- from: ThirdPartyDsrRequest
+  to: PartnerDsrRequestType
+  type: has_one
+  via: RequestType
+- from: ThirdPartyDsrResponse
+  to: ThirdPartyDsrFailedLine
+  type: has_many
+  via: FailedLines
+id_reference_fields: []
+entities:
+- name: AdvertiserData
+  kind: object
+  fields:
+  - BaseBidCPM
+  - BaseBidCPMMetadata
+  - BidFactor
+  - Name
+  - TimestampUtc
+  - TtlInMinutes
+  values: null
+- name: AdvertiserDataItem
+  kind: object
+  fields:
+  - CookieMappingPartnerId
+  - CoreID
+  - DAID
+  - Data
+  - EUID
+  - EUIDToken
+  - FirstID
+  - ID5
+  - IqviaPPID
+  - MerkuryID
+  - NetID
+  - RampID
+  - RealID
+  - TDID
+  - UID2
+  - UID2Token
+  - UtiqID
+  values: null
+- name: AdvertiserDataRequest
+  kind: object
+  fields:
+  - AdvertiserId
+  - DataLoadTraceId
+  - DataProviderId
+  - Items
+  values: null
+- name: AdvertiserDataResponseErrorCode
+  kind: enum
+  fields: null
+  values:
+  - Unknown
+  - BaseBidCPMMetadataTooLong
+  - MissingUserId
+  - UserNotMapped
+  - Deprecated_MissingCookieMappingPartnerId
+  - InvalidBidFactor
+  - DataNameTooLong
+  - InvalidTtlInMinutes
+  - InvalidBaseBidCPM
+  - InvalidDataOwnerId
+  - InvalidParameterFormat
+  - TargetingDataCreationLimitExceeded
+  - TargetingDataCountLimitExceeded
+  - TenantRestrictionsExternalData
+  - TargetingDataDisabled
+  - ItemDeserializationError
+- name: AdvertiserDataServerResponse
+  kind: object
+  fields:
+  - FailedLines
+  values: null
+- name: AdvertiserDataServerResponseLine
+  kind: object
+  fields:
+  - DataName
+  - DataNumber
+  - ErrorCode
+  - ItemNumber
+  - Message
+  - TDID
+  values: null
+- name: AdvertiserDsrFailedLine
+  kind: object
+  fields:
+  - AdvertiserId
+  - DataNumber
+  - DataProviderId
+  - ErrorCode
+  - ItemNumber
+  - Message
+  - TDID
+  values: null
+- name: AdvertiserDsrRequest
+  kind: object
+  fields:
+  - AdvertiserId
+  - DataLoadTraceId
+  - DataProviderId
+  - Items
+  - RequestType
+  values: null
+- name: AdvertiserDsrResponse
+  kind: object
+  fields:
+  - FailedLines
+  values: null
+- name: DsrErrorCode
+  kind: enum
+  fields: null
+  values:
+  - Unknown
+  - InvalidUserId
+  - ItemDeserializationError
+- name: ExpandedIpAddress
+  kind: object
+  fields:
+  - IPAddress
+  - IPAddressRange
+  - TargetingDataMetadataId
+  values: null
+- name: IPAddressData
+  kind: object
+  fields:
+  - ExpandedIpAddresses
+  - IPAddressRanges
+  - IPAddresses
+  - Name
+  - TargetingDataMetadataId
+  - TimestampUtc
+  - TtlInMinutes
+  values: null
+- name: IPAddressDataItem
+  kind: object
+  fields:
+  - CookieMappingPartnerId
+  - CoreID
+  - DAID
+  - Data
+  - EUID
+  - EUIDToken
+  - FirstID
+  - ID5
+  - IqviaPPID
+  - MerkuryID
+  - NetID
+  - RampID
+  - RealID
+  - TDID
+  - UID2
+  - UID2Token
+  - UtiqID
+  values: null
+- name: IPAddressDataRequest
+  kind: object
+  fields:
+  - DataLoadTraceId
+  - DataOwnerId
+  - Items
+  values: null
+- name: IPAddressDataResponseErrorCode
+  kind: enum
+  fields: null
+  values:
+  - Unknown
+  - MissingDataOwnerId
+  - DataOwnerIdNotMapped
+  - InvalidIPAddress
+  - InvalidIPAddressRange
+  - EuIpTargetingNotAllowedForPartner
+  - NotTargetable
+- name: IPAddressDataServerResponse
+  kind: object
+  fields:
+  - DataOwnerId
+  - FailedLines
+  values: null
+- name: IPAddressDataServerResponseLine
+  kind: object
+  fields:
+  - DataName
+  - DataNumber
+  - ErrorCode
+  - IPAddress
+  - ItemNumber
+  - Message
+  values: null
+- name: MerchantDsrFailedLine
+  kind: object
+  fields:
+  - DataNumber
+  - ErrorCode
+  - ItemNumber
+  - MerchantId
+  - Message
+  - TDID
+  values: null
+- name: MerchantDsrRequest
+  kind: object
+  fields:
+  - DataLoadTraceId
+  - Items
+  - MerchantId
+  - RequestType
+  values: null
+- name: MerchantDsrResponse
+  kind: object
+  fields:
+  - FailedLines
+  values: null
+- name: OfflineConversionDataItem
+  kind: object
+  fields:
+  - City
+  - CookieMappingPartnerId
+  - Country
+  - DAID
+  - DataProviderUserId
+  - EUID
+  - EUIDToken
+  - EventName
+  - ImpressionId
+  - LineItems
+  - MerchantId
+  - Metro
+  - OrderId
+  - PrivacySettings
+  - RampID
+  - Region
+  - TD1
+  - TD10
+  - TD2
+  - TD3
+  - TD4
+  - TD5
+  - TD6
+  - TD7
+  - TD8
+  - TD9
+  - TDID
+  - TimestampUtc
+  - TrackingTagId
+  - UID2
+  - UID2Token
+  - UserIdArray
+  - Value
+  - ValueCurrency
+  values: null
+- name: OfflineConversionDataRequest
+  kind: object
+  fields:
+  - DataLoadTraceId
+  - DataProviderId
+  - Items
+  - UserIdArrayMetadataFormat
+  values: null
+- name: OfflineConversionDataResponseErrorCode
+  kind: enum
+  fields: null
+  values:
+  - Unknown
+  - MissingOrInvalidTDIDAndImpressionId
+  - MissingOrInvalidTrackingTagId
+  - InvalidMerchantId
+  - ChinaPII
+  - InvalidTimestamp
+  - InvalidUserIdTypeOrUserId
+  - Unauthorized
+  - ItemDeserializationError
+- name: OfflineConversionDataServerResponse
+  kind: object
+  fields:
+  - FailedLines
+  values: null
+- name: OfflineConversionDataServerResponseLine
+  kind: object
+  fields:
+  - ErrorCode
+  - ImpressionId
+  - ItemNumber
+  - Message
+  - OrderId
+  - OriginalRequest
+  - TDID
+  - TimestampUtc
+  - TrackingTagId
+  values: null
+- name: PartnerDsrDataItem
+  kind: object
+  fields:
+  - CoreID
+  - DAID
+  - EUID
+  - EUIDToken
+  - FirstID
+  - ID5
+  - IqviaPPID
+  - MerkuryID
+  - NetID
+  - RampID
+  - RealID
+  - TDID
+  - UID2
+  - UID2Token
+  - UtiqID
+  values: null
+- name: PartnerDsrRequestType
+  kind: enum
+  fields: null
+  values:
+  - OptOut
+  - Deletion
+- name: RealTimeConversionEventLineItem
+  kind: object
+  fields:
+  - cat
+  - item_code
+  - name
+  - price
+  - qty
+  values: null
+- name: RealTimeConversionEventsPrivacySetting
+  kind: object
+  fields:
+  - consent_string
+  - is_applicable
+  - privacy_type
+  values: null
+- name: StringStringValueTuple
+  kind: object
+  fields:
+  - Item1
+  - Item2
+  values: null
+- name: ThirdPartyData
+  kind: object
+  fields:
+  - Name
+  - TimestampUtc
+  - TtlInMinutes
+  values: null
+- name: ThirdPartyDataItem
+  kind: object
+  fields:
+  - CookieMappingPartnerId
+  - CoreID
+  - DAID
+  - Data
+  - DataProviderUserId
+  - EUID
+  - EUIDToken
+  - FirstID
+  - ID5
+  - IqviaPPID
+  - MerkuryID
+  - NetID
+  - RampID
+  - RealID
+  - TDID
+  - UID2
+  - UID2Token
+  - UtiqID
+  values: null
+- name: ThirdPartyDataRequest
+  kind: object
+  fields:
+  - DataLoadTraceId
+  - DataProviderId
+  - IsUserIdAlreadyHashed
+  - Items
+  values: null
+- name: ThirdPartyDataResponseErrorCode
+  kind: enum
+  fields: null
+  values:
+  - Unknown
+  - MissingUserId
+  - UserNotMapped
+  - DataNameTooLong
+  - UnauthorisedThirdPartyDataWithBaseBidCPM
+  - InvalidTtlInMinutes
+  - InvalidDataOwnerId
+  - InvalidParameterFormat
+  - TargetingDataCreationLimitExceeded
+  - TargetingDataCountLimitExceeded
+  - TenantRestrictionsExternalData
+  - TargetingDataDisabled
+  - ItemDeserializationError
+- name: ThirdPartyDataServerResponse
+  kind: object
+  fields:
+  - FailedLines
+  values: null
+- name: ThirdPartyDataServerResponseLine
+  kind: object
+  fields:
+  - DataName
+  - DataNumber
+  - DataProviderUserId
+  - ErrorCode
+  - ItemNumber
+  - Message
+  - TDID
+  values: null
+- name: ThirdPartyDsrFailedLine
+  kind: object
+  fields:
+  - DataNumber
+  - DataProviderId
+  - ErrorCode
+  - ItemNumber
+  - Message
+  - TDID
+  values: null
+- name: ThirdPartyDsrRequest
+  kind: object
+  fields:
+  - BrandId
+  - DataLoadTraceId
+  - DataProviderId
+  - Items
+  - RequestType
+  values: null
+- name: ThirdPartyDsrResponse
+  kind: object
+  fields:
+  - FailedLines
+  values: null
