@@ -3,14 +3,10 @@
   "feeds": [
     {
       "source": "https://www.thetradedesk.com/us/news",
-      "feed_url": "https://www.thetradedesk.com/us/news",
-      "title": "",
-      "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "error": "HTTPError"
     }
   ],
   "post_count": 3,
-  "fetched": "2026-08-15T12:11:08Z",
+  "fetched": "2026-08-22T20:20:02Z",
   "agent_pulled": "2026-06-27"
 }
