@@ -336,7 +336,7 @@ apis:
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
   baseURL: https://usw-data.adsrvr.org
   tags:
-  - IP Address
+  - IPAddress
   tags_raw:
   - IPAddress
   properties:
