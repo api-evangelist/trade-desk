@@ -291,7 +291,7 @@ apis:
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
   baseURL: https://usw-data.adsrvr.org
   tags:
-  - Third-Party
+  - Third Party
   tags_raw:
   - ThirdParty
   properties:
@@ -336,7 +336,7 @@ apis:
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
   baseURL: https://usw-data.adsrvr.org
   tags:
-  - IPAddress
+  - IP Address
   tags_raw:
   - IPAddress
   properties:
