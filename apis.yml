@@ -1,27 +1,6 @@
 aid: trade-desk
 name: The Trade Desk
-description: >-
-  The Trade Desk is an independent, omnichannel demand-side platform (DSP) for
-  programmatic advertising, headquartered in Ventura, California. Its
-  cloud-based platform — Kokai (the current flagship, succeeding Solimar) —
-  lets agencies, brands, and trading desks buy and optimize digital ad
-  inventory across connected TV (CTV), audio, mobile, video, native, display,
-  and digital out-of-home. The Trade Desk positions itself as the
-  buy-side counterweight to the walled gardens by championing the open
-  internet through OpenPath (direct publisher integrations that bypass SSPs)
-  and Unified ID 2.0 (UID2), an open-source, deterministic identity framework
-  governed by the IAB Tech Lab. The company also stewards EUID (UID2's
-  European equivalent), the Galileo first-party data activation framework,
-  and Koa — its in-platform AI used for forecasting, bidding optimization,
-  and audience modeling. Programmatic developers integrate via the TTD
-  Workflows API (REST + GraphQL for campaign, ad group, and creative
-  management), the Data API (advertiser/third-party data ingestion, offline
-  conversions, deletion/opt-out), the Real-Time Conversion Events API (RTCE),
-  and the OpenSincera data-quality APIs (acquired May 2024). Official SDKs
-  are published in Python, Go, and Java and are Speakeasy-generated from
-  OpenAPI specs. Most documentation lives behind the Partner Portal
-  (partner.thetradedesk.com) but a public docs surface is exposed at
-  open.thetradedesk.com. The Trade Desk is publicly traded (NASDAQ: TTD).
+description: 'The Trade Desk is an independent, omnichannel demand-side platform (DSP) for programmatic advertising, headquartered in Ventura, California. Its cloud-based platform — Kokai (the current flagship, succeeding Solimar) — lets agencies, brands, and trading desks buy and optimize digital ad inventory across connected TV (CTV), audio, mobile, video, native, display, and digital out-of-home. The Trade Desk positions itself as the buy-side counterweight to the walled gardens by championing the open internet through OpenPath (direct publisher integrations that bypass SSPs) and Unified ID 2.0 (UID2), an open-source, deterministic identity framework governed by the IAB Tech Lab. The company also stewards EUID (UID2''s European equivalent), the Galileo first-party data activation framework, and Koa — its in-platform AI used for forecasting, bidding optimization, and audience modeling. Programmatic developers integrate via the TTD Workflows API (REST + GraphQL for campaign, ad group, and creative management), the Data API (advertiser/third-party data ingestion, offline conversions, deletion/opt-out), the Real-Time Conversion Events API (RTCE), and the OpenSincera data-quality APIs (acquired May 2024). Official SDKs are published in Python, Go, and Java and are Speakeasy-generated from OpenAPI specs. Most documentation lives behind the Partner Portal (partner.thetradedesk.com) but a public docs surface is exposed at open.thetradedesk.com. The Trade Desk is publicly traded (NASDAQ: TTD).'
 type: Index
 deliveryModel:
   model: saas
@@ -98,11 +77,7 @@ apis:
   - url: https://github.com/TheTradeDesk/Platform
     type: CodeExamples
     name: TheTradeDesk/Platform helper scripts
-  description: >-
-    The original REST Platform API covering advertisers, campaigns, ad groups, creatives, targeting data,
-    reporting, and audience operations. Documentation is gated behind the TTD Partner Portal. New integrations
-    are generally steered to the Workflows API; Platform remains the reference for low-level objects and
-    reporting endpoints.
+  description: The original REST Platform API covering advertisers, campaigns, ad groups, creatives, targeting data, reporting, and audience operations. Documentation is gated behind the TTD Partner Portal. New integrations are generally steered to the Workflows API; Platform remains the reference for low-level objects and reporting endpoints.
 - aid: trade-desk:trade-desk-realtime-conversion-events-api
   name: The Trade Desk Real-Time Conversion Events API
   tags:
@@ -124,10 +99,7 @@ apis:
   - url: https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager
     type: SDKs
     name: GTM Server-Side Template
-  description: >-
-    Server-side and client-side conversion event ingestion (Apache 2.0 Google Tag Manager templates) for
-    capturing high-fidelity attribution signals in a cookie-deprecated environment. Pairs with UID2 for
-    identity resolution.
+  description: Server-side and client-side conversion event ingestion (Apache 2.0 Google Tag Manager templates) for capturing high-fidelity attribution signals in a cookie-deprecated environment. Pairs with UID2 for identity resolution.
 - aid: trade-desk:trade-desk-uid2-api
   name: Unified ID 2.0 (UID2)
   tags:
@@ -153,11 +125,7 @@ apis:
   - url: https://github.com/IABTechLab/uid2-operator
     type: SDKs
     name: UID2 Operator Reference Implementation
-  description: >-
-    Unified ID 2.0 is an open-source, deterministic identity framework seeded by The Trade Desk and now
-    governed by the IAB Tech Lab. UID2 resolves hashed email addresses and phone numbers into rotating
-    tokens that publishers, DSPs, SSPs, and measurement vendors can use for addressable advertising without
-    third-party cookies. The EUID variant provides a GDPR-aligned European deployment.
+  description: Unified ID 2.0 is an open-source, deterministic identity framework seeded by The Trade Desk and now governed by the IAB Tech Lab. UID2 resolves hashed email addresses and phone numbers into rotating tokens that publishers, DSPs, SSPs, and measurement vendors can use for addressable advertising without third-party cookies. The EUID variant provides a GDPR-aligned European deployment.
 - aid: trade-desk:trade-desk-opensincera-api
   name: OpenSincera API
   tags:
@@ -170,10 +138,7 @@ apis:
   properties:
   - url: https://partner.thetradedesk.com/v3/portal/opensincera/overview
     type: Documentation
-  description: >-
-    OpenSincera (from the May 2024 Sincera acquisition) provides programmatic supply-side transparency
-    data — ad slot quality, page attributes, viewability metadata, supply-path metrics — to help buyers
-    value impressions and audit inventory.
+  description: OpenSincera (from the May 2024 Sincera acquisition) provides programmatic supply-side transparency data — ad slot quality, page attributes, viewability metadata, supply-path metrics — to help buyers value impressions and audit inventory.
 - aid: trade-desk:trade-desk-advertiser-api
   name: The Trade Desk Advertiser API
   description: The Advertiser API from The Trade Desk — 1 operation(s) for advertiser.
@@ -185,14 +150,11 @@ apis:
   - type: OpenAPI
     url: openapi/trade-desk-advertiser-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+    url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
   - type: SDKs
     url: https://github.com/TheTradeDesk/ttd-data-python
   - type: Documentation
@@ -224,14 +186,11 @@ apis:
   - type: OpenAPI
     url: openapi/trade-desk-deletionoptout-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+    url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
   - type: SDKs
     url: https://github.com/TheTradeDesk/ttd-data-python
   - type: Documentation
@@ -263,14 +222,11 @@ apis:
   - type: OpenAPI
     url: openapi/trade-desk-offlineconversion-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+    url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
   - type: SDKs
     url: https://github.com/TheTradeDesk/ttd-data-python
   - type: Documentation
@@ -304,14 +260,11 @@ apis:
   - type: OpenAPI
     url: openapi/trade-desk-thirdparty-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
+    url: https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion
   - type: SDKs
     url: https://github.com/TheTradeDesk/ttd-data-python
   - type: Documentation
@@ -334,11 +287,7 @@ apis:
     url: graphql/trade-desk-graphql.md
 - aid: trade-desk:trade-desk-ipaddress-api
   name: The Trade Desk IPAddress Data API
-  description: >-
-    IP-address ingestion endpoints of the TTD Data API — upload first-party or third-party
-    IP-address-based targeting data for use in audience targeting. Discovered 2026-08-13 in the
-    provider-published Swagger document at https://usw-data.adsrvr.org/swagger/v1/swagger.json,
-    which carries two operations under the IPAddress tag that were absent from the earlier harvest.
+  description: IP-address ingestion endpoints of the TTD Data API — upload first-party or third-party IP-address-based targeting data for use in audience targeting. Discovered 2026-08-13 in the provider-published Swagger document at https://usw-data.adsrvr.org/swagger/v1/swagger.json, which carries two operations under the IPAddress tag that were absent from the earlier harvest.
   humanURL: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data
   baseURL: https://usw-data.adsrvr.org
   tags:
@@ -351,10 +300,51 @@ apis:
   - type: Overlay
     url: overlays/trade-desk-ipaddress-api-overlay.yaml
   - type: Documentation
-    url: >-
-      https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
+    url: https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty
   - type: SDKs
     url: https://github.com/TheTradeDesk/ttd-data-python
+- aid: trade-desk:the-trade-desk-real-time-conversions-api
+  name: The Trade Desk Real-Time Conversions API
+  description: The Trade Desk Real-Time Conversions API (formerly the Real-Time Conversion Events API) allows advertisers to send conversion events server-side in real time, enabling more accurate attribution, cross-device measurement, and campaign optimization. It supports sending hashed email and phone identifiers along with event data for impression-to-conversion tracking without relying on browser cookies.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://partner.thetradedesk.com/v3/portal/api/overview
+  baseURL: https://api.thetradedesk.com/v3
+  tags:
+  - Conversions
+  - Attribution
+  - Real-Time
+  - Measurements
+  - Server-Side
+  tags_raw:
+  - Conversions
+  - Attribution
+  - Real-Time
+  - Measurement
+  - Server-Side
+  properties:
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/overview
+  - type: AdobeExtensionDocs
+    url: https://experienceleague.adobe.com/en/docs/experience-platform/tags/extensions/server/thetradedesk/overview
+  - type: GitHubSDK
+    url: https://github.com/thetradedesk/conversion-events-sdk-for-googletagmanager
+- aid: trade-desk:the-trade-desk-reporting-api
+  name: The Trade Desk Reporting API
+  description: The Trade Desk Reporting API provides programmatic access to campaign performance data including impressions, clicks, conversions, spend, win rates, viewability, effective CPM, completion rates, and 200+ additional metrics and dimensions. Supports incremental data sync for campaign, ad group, ad, creative, and targeting performance at configurable granularity levels.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://partner.thetradedesk.com/v3/portal/api/overview
+  baseURL: https://api.thetradedesk.com/v3
+  tags:
+  - Reporting
+  - Analytics
+  - Performance
+  - Metrics
+  - Campaign Analytics
+  properties:
+  - type: Documentation
+    url: https://partner.thetradedesk.com/v3/portal/api/overview
+  - type: Reference
+    url: https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform
 common:
 - type: TrustCenter
   url: https://www.thetradedesk.com/trust
