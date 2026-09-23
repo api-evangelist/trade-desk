@@ -1,20 +1,38 @@
 {
   "provider": "trade-desk",
   "sources": [
-    "trade-desk-advertiser-api-openapi.yml",
-    "trade-desk-deletionoptout-api-openapi.yml",
-    "trade-desk-offlineconversion-api-openapi.yml",
-    "trade-desk-thirdparty-api-openapi.yml"
+    "_original/trade-desk-data-api-swagger.json"
   ],
   "outputs": [
     "trade-desk-advertiser-api-openapi.yml",
     "trade-desk-deletionoptout-api-openapi.yml",
+    "trade-desk-ipaddress-api-openapi.yml",
     "trade-desk-offlineconversion-api-openapi.yml",
     "trade-desk-thirdparty-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "trade-desk-data-api-swagger.json: upgraded openapi 3.0.4 -> OpenAPI 3.2.0",
+    "trade-desk-data-api-swagger.json: declared missing tag: Advertiser",
+    "trade-desk-data-api-swagger.json: declared missing tag: DeletionOptOut",
+    "trade-desk-data-api-swagger.json: declared missing tag: IPAddress",
+    "trade-desk-data-api-swagger.json: declared missing tag: OfflineConversion",
+    "trade-desk-data-api-swagger.json: declared missing tag: ThirdParty",
+    "superseded outputs removed: trade-desk-ip-address-api-openapi.yml, trade-desk-third-party-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 11 total)"
+  ],
+  "skipped": [
+    "_original/trade-desk-data-api-openapi.yml: archived document superseded by a larger archived document",
+    "trade-desk-advertiser-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trade-desk-deletionoptout-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trade-desk-ip-address-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trade-desk-offlineconversion-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trade-desk-third-party-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

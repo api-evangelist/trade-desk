@@ -1,33 +1,7 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: TTD Data Advertiser OfflineConversion API
+  title: TTD Data Offline Conversion API
   version: v0.1
-  description: 'Python SDK for The Trade Desk Data API. Provides operations for ingesting advertiser data,
-
-    third-party data, and offline conversions, as well as handling data subject deletion and opt-out requests.
-
-
-    For more information, see the official API documentation:
-
-    - [Advertiser targeting data (1PD)](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty)
-
-    - [Third-party targeting data (3PD)](https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty)
-
-    - [Offline conversions (CAPI)](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion)
-
-
-    Deletions and opt-outs:
-
-    - [Advertiser](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-deletion-optout-advertiser)
-
-    - [Third party](https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-deletion-optout-thirdparty)
-
-    - [Merchant](https://open.thetradedesk.com/provider/docsApp/GuidesProvider/retail/doc/post-data-deletion-optout-merchant)
-
-    '
-servers:
-- url: https://offlineattrib.adsrvr.org
-  description: Offline attribution environment
 tags:
 - name: OfflineConversion
 paths:
@@ -35,7 +9,7 @@ paths:
     post:
       tags:
       - OfflineConversion
-      summary: Upload offline conversion data for the specified data provider.
+      summary: Upload offline conversion data for the specified data provider
       operationId: IngestOfflineConversionData
       parameters:
       - name: TTD-Auth
@@ -58,12 +32,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/OfflineConversionDataServerResponse'
         '400':
-          description: Bad Request - Invalid JSON, missing items, data provider not configured, or policy
-            restrictions
+          description: Bad Request - Invalid JSON, missing items, data provider not configured, or policy restrictions
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/OfflineConversionDataServerResponse'
+        '401':
+          description: Unauthorized - Invalid or missing authentication token
+          content:
+            application/json:
+              schema:
+                type: string
         '403':
           description: Forbidden - Cannot create offline conversion data for this data provider
           content:
@@ -90,226 +69,56 @@ paths:
       - url: https://offlineattrib.adsrvr.org
 components:
   schemas:
-    DataOrigin:
-      required:
-      - Id
-      - Type
-      type: object
-      properties:
-        Id:
-          type: string
-        Type:
-          $ref: '#/components/schemas/DataOriginType'
-      additionalProperties: false
-    RealTimeConversionEventLineItem:
-      type: object
-      properties:
-        item_code:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-        qty:
-          type: string
-          nullable: true
-        price:
-          type: string
-          nullable: true
-        cat:
-          type: string
-          nullable: true
-      additionalProperties: false
-    OfflineConversionDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfflineConversionDataServerResponseLine'
-          nullable: true
-      additionalProperties: false
-    DataOriginType:
-      type: string
-      enum:
-      - Advertiser
-      - DataProvider
-      - Integration
-      - Onboarder
-    OfflineConversionDataItem:
-      required:
-      - TimestampUtc
-      - TrackingTagId
-      type: object
-      properties:
-        TDID:
-          type: string
-          nullable: true
-        DAID:
-          type: string
-          nullable: true
-        UID2:
-          type: string
-          nullable: true
-        UID2Token:
-          type: string
-          nullable: true
-        RampID:
-          type: string
-          nullable: true
-        EUID:
-          type: string
-          nullable: true
-        EUIDToken:
-          type: string
-          nullable: true
-        DataProviderUserId:
-          type: string
-          nullable: true
-        UserIdArray:
-          type: array
-          items:
-            maxItems: 2
-            minItems: 2
-            type: array
-            items:
-              type: string
-          description: Array of [type, id] pairs.
-          nullable: true
-        CookieMappingPartnerId:
-          type: string
-          nullable: true
-        OrderId:
-          type: string
-          nullable: true
-        ImpressionId:
-          type: string
-          nullable: true
-        TrackingTagId:
-          type: string
-        TimestampUtc:
-          type: string
-          format: date-time
-        Value:
-          type: string
-          nullable: true
-        ValueCurrency:
-          type: string
-          nullable: true
-        Country:
-          type: string
-          nullable: true
-        Region:
-          type: string
-          nullable: true
-        Metro:
-          type: string
-          nullable: true
-        City:
-          type: string
-          nullable: true
-        MerchantId:
-          type: string
-          nullable: true
-        EventName:
-          type: string
-          nullable: true
-        LineItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/RealTimeConversionEventLineItem'
-          nullable: true
-        PrivacySettings:
-          type: array
-          items:
-            $ref: '#/components/schemas/RealTimeConversionEventsPrivacySetting'
-          nullable: true
-        TD1:
-          type: string
-          nullable: true
-        TD2:
-          type: string
-          nullable: true
-        TD3:
-          type: string
-          nullable: true
-        TD4:
-          type: string
-          nullable: true
-        TD5:
-          type: string
-          nullable: true
-        TD6:
-          type: string
-          nullable: true
-        TD7:
-          type: string
-          nullable: true
-        TD8:
-          type: string
-          nullable: true
-        TD9:
-          type: string
-          nullable: true
-        TD10:
-          type: string
-          nullable: true
-      additionalProperties: false
-      x-speakeasy-name-override: BaseOfflineConversionDataItem
-    OfflineConversionDataRequest:
-      required:
-      - DataProviderId
-      type: object
-      properties:
-        DataProviderId:
-          type: string
-        UserIdArrayMetadataFormat:
-          type: array
-          items:
-            type: string
-          nullable: true
-        Items:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfflineConversionDataItem'
-          nullable: true
-        DataLoadTraceId:
-          type: string
-          nullable: true
-        DataOrigins:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataOrigin'
-          nullable: true
-      additionalProperties: false
     OfflineConversionDataServerResponseLine:
       type: object
       properties:
         OrderId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ImpressionId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         TDID:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         TrackingTagId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         TimestampUtc:
           type: string
           format: date-time
         ErrorCode:
           $ref: '#/components/schemas/OfflineConversionDataResponseErrorCode'
         Message:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         ItemNumber:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         OriginalRequest:
           $ref: '#/components/schemas/OfflineConversionDataItem'
+      additionalProperties: false
+    RealTimeConversionEventsPrivacySetting:
+      type: object
+      properties:
+        privacy_type:
+          type:
+          - string
+          - 'null'
+        is_applicable:
+          type:
+          - string
+          - 'null'
+        consent_string:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     OfflineConversionDataResponseErrorCode:
       enum:
@@ -321,18 +130,214 @@ components:
       - InvalidTimestamp
       - InvalidUserIdTypeOrUserId
       - Unauthorized
-      - Uid2Error
+      - ItemDeserializationError
       type: string
-    RealTimeConversionEventsPrivacySetting:
+    RealTimeConversionEventLineItem:
       type: object
       properties:
-        privacy_type:
+        item_code:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        qty:
+          type:
+          - string
+          - 'null'
+        price:
+          type:
+          - string
+          - 'null'
+        cat:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OfflineConversionDataItem:
+      required:
+      - TimestampUtc
+      - TrackingTagId
+      type: object
+      properties:
+        TDID:
+          type:
+          - string
+          - 'null'
+        DAID:
+          type:
+          - string
+          - 'null'
+        UID2:
+          type:
+          - string
+          - 'null'
+        UID2Token:
+          type:
+          - string
+          - 'null'
+        RampID:
+          type:
+          - string
+          - 'null'
+        EUID:
+          type:
+          - string
+          - 'null'
+        EUIDToken:
+          type:
+          - string
+          - 'null'
+        DataProviderUserId:
+          type:
+          - string
+          - 'null'
+        UserIdArray:
+          type:
+          - array
+          - 'null'
+          items:
+            maxItems: 2
+            minItems: 2
+            type: array
+            items:
+              type: string
+          description: Array of [type, id] pairs.
+        CookieMappingPartnerId:
+          type:
+          - string
+          - 'null'
+        OrderId:
+          type:
+          - string
+          - 'null'
+        ImpressionId:
+          type:
+          - string
+          - 'null'
+        TrackingTagId:
           type: string
-          nullable: true
-        is_applicable:
+        TimestampUtc:
           type: string
-          nullable: true
-        consent_string:
+          format: date-time
+        Value:
+          type:
+          - string
+          - 'null'
+        ValueCurrency:
+          type:
+          - string
+          - 'null'
+        Country:
+          type:
+          - string
+          - 'null'
+        Region:
+          type:
+          - string
+          - 'null'
+        Metro:
+          type:
+          - string
+          - 'null'
+        City:
+          type:
+          - string
+          - 'null'
+        MerchantId:
+          type:
+          - string
+          - 'null'
+        EventName:
+          type:
+          - string
+          - 'null'
+        LineItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RealTimeConversionEventLineItem'
+        PrivacySettings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RealTimeConversionEventsPrivacySetting'
+        TD1:
+          type:
+          - string
+          - 'null'
+        TD2:
+          type:
+          - string
+          - 'null'
+        TD3:
+          type:
+          - string
+          - 'null'
+        TD4:
+          type:
+          - string
+          - 'null'
+        TD5:
+          type:
+          - string
+          - 'null'
+        TD6:
+          type:
+          - string
+          - 'null'
+        TD7:
+          type:
+          - string
+          - 'null'
+        TD8:
+          type:
+          - string
+          - 'null'
+        TD9:
+          type:
+          - string
+          - 'null'
+        TD10:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OfflineConversionDataRequest:
+      required:
+      - DataProviderId
+      type: object
+      properties:
+        DataProviderId:
           type: string
-          nullable: true
+        UserIdArrayMetadataFormat:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OfflineConversionDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OfflineConversionDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OfflineConversionDataServerResponseLine'
       additionalProperties: false

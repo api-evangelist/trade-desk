@@ -1,16 +1,16 @@
 openapi: 3.2.0
 info:
-  title: TTD Data Advertiser API
+  title: TTD Data Third Party API
   version: v0.1
 tags:
-- name: Advertiser
+- name: Third Party
 paths:
-  /data/advertiser:
+  /data/thirdparty:
     post:
       tags:
-      - Advertiser
-      summary: Upload first-party data for the specified ID for use in audience targeting
-      operationId: IngestAdvertiserData
+      - Third Party
+      summary: Upload third-party data for the specified data provider for use in audience…
+      operationId: IngestThirdPartyData
       parameters:
       - name: TTD-Auth
         in: header
@@ -22,7 +22,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AdvertiserDataRequest'
+              $ref: '#/components/schemas/ThirdPartyDataRequest'
         required: true
       responses:
         '200':
@@ -30,13 +30,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdvertiserDataServerResponse'
+                $ref: '#/components/schemas/ThirdPartyDataServerResponse'
         '400':
-          description: Bad Request - Invalid JSON, missing items, advertiser not configured, or policy restrictions
+          description: Bad Request - Invalid JSON, missing items, data provider not configured, or policy restrictions
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdvertiserDataServerResponse'
+                $ref: '#/components/schemas/ThirdPartyDataServerResponse'
         '401':
           description: Unauthorized - Invalid or missing authentication token
           content:
@@ -44,7 +44,7 @@ paths:
               schema:
                 type: string
         '403':
-          description: Forbidden - Cannot create new targeting data for this advertiser
+          description: Forbidden - Cannot create new targeting data for this data provider
           content:
             application/json:
               schema:
@@ -60,60 +60,38 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AdvertiserDataServerResponse'
+                $ref: '#/components/schemas/ThirdPartyDataServerResponse'
         '500':
           description: Internal Server Error - Unexpected server error
         '503':
           description: Service Unavailable - Handler disabled or request dropped
       servers:
-      - url: https://usw-data.adsrvr.org
+      - url: https://bulk-data.adsrvr.org
 components:
   schemas:
-    AdvertiserData:
-      required:
-      - Name
+    ThirdPartyDataResponseErrorCode:
+      enum:
+      - Unknown
+      - MissingUserId
+      - UserNotMapped
+      - DataNameTooLong
+      - UnauthorisedThirdPartyDataWithBaseBidCPM
+      - InvalidTtlInMinutes
+      - InvalidDataOwnerId
+      - InvalidParameterFormat
+      - TargetingDataCreationLimitExceeded
+      - TargetingDataCountLimitExceeded
+      - TenantRestrictionsExternalData
+      - TargetingDataDisabled
+      - ItemDeserializationError
+      type: string
+    ThirdPartyDataServerResponseLine:
       type: object
       properties:
-        Name:
-          type: string
-        TimestampUtc:
+        DataProviderUserId:
           type:
           - string
           - 'null'
-          format: date-time
-        TtlInMinutes:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        BaseBidCPM:
-          type:
-          - number
-          - 'null'
-          format: double
-        BaseBidCPMMetadata:
-          type:
-          - string
-          - 'null'
-        BidFactor:
-          type:
-          - number
-          - 'null'
-          format: double
-      additionalProperties: false
-    AdvertiserDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AdvertiserDataServerResponseLine'
-      additionalProperties: false
-    AdvertiserDataServerResponseLine:
-      type: object
-      properties:
         TDID:
           type:
           - string
@@ -124,7 +102,7 @@ components:
           - string
           - 'null'
         ErrorCode:
-          $ref: '#/components/schemas/AdvertiserDataResponseErrorCode'
+          $ref: '#/components/schemas/ThirdPartyDataResponseErrorCode'
         Message:
           type:
           - string
@@ -138,11 +116,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    AdvertiserDataItem:
+    ThirdPartyDataItem:
       required:
       - Data
       type: object
       properties:
+        DataProviderUserId:
+          type:
+          - string
+          - 'null'
         TDID:
           type:
           - string
@@ -206,50 +188,58 @@ components:
         Data:
           type: array
           items:
-            $ref: '#/components/schemas/AdvertiserData'
+            $ref: '#/components/schemas/ThirdPartyData'
         CookieMappingPartnerId:
           type:
           - string
           - 'null'
       additionalProperties: false
-    AdvertiserDataRequest:
+    ThirdPartyData:
       required:
-      - AdvertiserId
+      - Name
       type: object
       properties:
-        AdvertiserId:
+        Name:
           type: string
-        DataProviderId:
+        TimestampUtc:
           type:
           - string
           - 'null'
+          format: date-time
+        TtlInMinutes:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    ThirdPartyDataRequest:
+      required:
+      - DataProviderId
+      type: object
+      properties:
+        DataProviderId:
+          type: string
         Items:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/AdvertiserDataItem'
+            $ref: '#/components/schemas/ThirdPartyDataItem'
         DataLoadTraceId:
           type:
           - string
           - 'null'
+        IsUserIdAlreadyHashed:
+          type: boolean
+          default: false
       additionalProperties: false
-    AdvertiserDataResponseErrorCode:
-      enum:
-      - Unknown
-      - BaseBidCPMMetadataTooLong
-      - MissingUserId
-      - UserNotMapped
-      - Deprecated_MissingCookieMappingPartnerId
-      - InvalidBidFactor
-      - DataNameTooLong
-      - InvalidTtlInMinutes
-      - InvalidBaseBidCPM
-      - InvalidDataOwnerId
-      - InvalidParameterFormat
-      - TargetingDataCreationLimitExceeded
-      - TargetingDataCountLimitExceeded
-      - TenantRestrictionsExternalData
-      - TargetingDataDisabled
-      - ItemDeserializationError
-      type: string
+    ThirdPartyDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
+      additionalProperties: false
