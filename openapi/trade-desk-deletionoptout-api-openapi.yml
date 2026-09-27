@@ -193,16 +193,6 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
-    ThirdPartyDsrResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThirdPartyDsrFailedLine'
-      additionalProperties: false
     ThirdPartyDsrRequest:
       type: object
       properties:
@@ -226,6 +216,62 @@ components:
           - 'null'
         RequestType:
           $ref: '#/components/schemas/PartnerDsrRequestType'
+      additionalProperties: false
+    PartnerDsrRequestType:
+      enum:
+      - OptOut
+      - Deletion
+      type: string
+    AdvertiserDsrResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AdvertiserDsrFailedLine'
+      additionalProperties: false
+    MerchantDsrRequest:
+      type: object
+      properties:
+        MerchantId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PartnerDsrDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+        RequestType:
+          $ref: '#/components/schemas/PartnerDsrRequestType'
+      additionalProperties: false
+    MerchantDsrResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MerchantDsrFailedLine'
+      additionalProperties: false
+    ThirdPartyDsrResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThirdPartyDsrFailedLine'
       additionalProperties: false
     AdvertiserDsrFailedLine:
       type: object
@@ -258,41 +304,39 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    ThirdPartyDsrFailedLine:
+      type: object
+      properties:
+        DataProviderId:
+          type:
+          - string
+          - 'null'
+        TDID:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        ErrorCode:
+          $ref: '#/components/schemas/DsrErrorCode'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     DsrErrorCode:
       enum:
       - Unknown
       - InvalidUserId
       - ItemDeserializationError
       type: string
-    PartnerDsrRequestType:
-      enum:
-      - OptOut
-      - Deletion
-      type: string
-    AdvertiserDsrRequest:
-      type: object
-      properties:
-        AdvertiserId:
-          type:
-          - string
-          - 'null'
-        DataProviderId:
-          type:
-          - string
-          - 'null'
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/PartnerDsrDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-        RequestType:
-          $ref: '#/components/schemas/PartnerDsrRequestType'
-      additionalProperties: false
     PartnerDsrDataItem:
       type: object
       properties:
@@ -357,42 +401,29 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    ThirdPartyDsrFailedLine:
+    AdvertiserDsrRequest:
       type: object
       properties:
+        AdvertiserId:
+          type:
+          - string
+          - 'null'
         DataProviderId:
           type:
           - string
           - 'null'
-        TDID:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        ErrorCode:
-          $ref: '#/components/schemas/DsrErrorCode'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    AdvertiserDsrResponse:
-      type: object
-      properties:
-        FailedLines:
+        Items:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/AdvertiserDsrFailedLine'
+            $ref: '#/components/schemas/PartnerDsrDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+        RequestType:
+          $ref: '#/components/schemas/PartnerDsrRequestType'
       additionalProperties: false
     MerchantDsrFailedLine:
       type: object
@@ -420,35 +451,4 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    MerchantDsrResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MerchantDsrFailedLine'
-      additionalProperties: false
-    MerchantDsrRequest:
-      type: object
-      properties:
-        MerchantId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/PartnerDsrDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-        RequestType:
-          $ref: '#/components/schemas/PartnerDsrRequestType'
       additionalProperties: false

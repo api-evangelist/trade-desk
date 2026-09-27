@@ -104,34 +104,6 @@ components:
         OriginalRequest:
           $ref: '#/components/schemas/OfflineConversionDataItem'
       additionalProperties: false
-    RealTimeConversionEventsPrivacySetting:
-      type: object
-      properties:
-        privacy_type:
-          type:
-          - string
-          - 'null'
-        is_applicable:
-          type:
-          - string
-          - 'null'
-        consent_string:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    OfflineConversionDataResponseErrorCode:
-      enum:
-      - Unknown
-      - MissingOrInvalidTDIDAndImpressionId
-      - MissingOrInvalidTrackingTagId
-      - InvalidMerchantId
-      - ChinaPII
-      - InvalidTimestamp
-      - InvalidUserIdTypeOrUserId
-      - Unauthorized
-      - ItemDeserializationError
-      type: string
     RealTimeConversionEventLineItem:
       type: object
       properties:
@@ -156,6 +128,68 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    RealTimeConversionEventsPrivacySetting:
+      type: object
+      properties:
+        privacy_type:
+          type:
+          - string
+          - 'null'
+        is_applicable:
+          type:
+          - string
+          - 'null'
+        consent_string:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OfflineConversionDataRequest:
+      required:
+      - DataProviderId
+      type: object
+      properties:
+        DataProviderId:
+          type: string
+        UserIdArrayMetadataFormat:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OfflineConversionDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OfflineConversionDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OfflineConversionDataServerResponseLine'
+      additionalProperties: false
+    OfflineConversionDataResponseErrorCode:
+      enum:
+      - Unknown
+      - MissingOrInvalidTDIDAndImpressionId
+      - MissingOrInvalidTrackingTagId
+      - InvalidMerchantId
+      - ChinaPII
+      - InvalidTimestamp
+      - InvalidUserIdTypeOrUserId
+      - Unauthorized
+      - ItemDeserializationError
+      type: string
     OfflineConversionDataItem:
       required:
       - TimestampUtc
@@ -306,38 +340,4 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    OfflineConversionDataRequest:
-      required:
-      - DataProviderId
-      type: object
-      properties:
-        DataProviderId:
-          type: string
-        UserIdArrayMetadataFormat:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OfflineConversionDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    OfflineConversionDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OfflineConversionDataServerResponseLine'
       additionalProperties: false

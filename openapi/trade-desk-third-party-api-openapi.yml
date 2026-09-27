@@ -69,22 +69,27 @@ paths:
       - url: https://bulk-data.adsrvr.org
 components:
   schemas:
-    ThirdPartyDataResponseErrorCode:
-      enum:
-      - Unknown
-      - MissingUserId
-      - UserNotMapped
-      - DataNameTooLong
-      - UnauthorisedThirdPartyDataWithBaseBidCPM
-      - InvalidTtlInMinutes
-      - InvalidDataOwnerId
-      - InvalidParameterFormat
-      - TargetingDataCreationLimitExceeded
-      - TargetingDataCountLimitExceeded
-      - TenantRestrictionsExternalData
-      - TargetingDataDisabled
-      - ItemDeserializationError
-      type: string
+    ThirdPartyDataRequest:
+      required:
+      - DataProviderId
+      type: object
+      properties:
+        DataProviderId:
+          type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThirdPartyDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+        IsUserIdAlreadyHashed:
+          type: boolean
+          default: false
+      additionalProperties: false
     ThirdPartyDataServerResponseLine:
       type: object
       properties:
@@ -116,6 +121,32 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    ThirdPartyDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
+      additionalProperties: false
+    ThirdPartyDataResponseErrorCode:
+      enum:
+      - Unknown
+      - MissingUserId
+      - UserNotMapped
+      - DataNameTooLong
+      - UnauthorisedThirdPartyDataWithBaseBidCPM
+      - InvalidTtlInMinutes
+      - InvalidDataOwnerId
+      - InvalidParameterFormat
+      - TargetingDataCreationLimitExceeded
+      - TargetingDataCountLimitExceeded
+      - TenantRestrictionsExternalData
+      - TargetingDataDisabled
+      - ItemDeserializationError
+      type: string
     ThirdPartyDataItem:
       required:
       - Data
@@ -211,35 +242,4 @@ components:
           - integer
           - 'null'
           format: int32
-      additionalProperties: false
-    ThirdPartyDataRequest:
-      required:
-      - DataProviderId
-      type: object
-      properties:
-        DataProviderId:
-          type: string
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThirdPartyDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-        IsUserIdAlreadyHashed:
-          type: boolean
-          default: false
-      additionalProperties: false
-    ThirdPartyDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
       additionalProperties: false

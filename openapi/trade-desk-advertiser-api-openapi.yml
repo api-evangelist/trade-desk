@@ -69,6 +69,52 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
+    AdvertiserDataServerResponseLine:
+      type: object
+      properties:
+        TDID:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        DataName:
+          type:
+          - string
+          - 'null'
+        ErrorCode:
+          $ref: '#/components/schemas/AdvertiserDataResponseErrorCode'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AdvertiserDataResponseErrorCode:
+      enum:
+      - Unknown
+      - BaseBidCPMMetadataTooLong
+      - MissingUserId
+      - UserNotMapped
+      - Deprecated_MissingCookieMappingPartnerId
+      - InvalidBidFactor
+      - DataNameTooLong
+      - InvalidTtlInMinutes
+      - InvalidBaseBidCPM
+      - InvalidDataOwnerId
+      - InvalidParameterFormat
+      - TargetingDataCreationLimitExceeded
+      - TargetingDataCountLimitExceeded
+      - TenantRestrictionsExternalData
+      - TargetingDataDisabled
+      - ItemDeserializationError
+      type: string
     AdvertiserData:
       required:
       - Name
@@ -111,29 +157,24 @@ components:
           items:
             $ref: '#/components/schemas/AdvertiserDataServerResponseLine'
       additionalProperties: false
-    AdvertiserDataServerResponseLine:
+    AdvertiserDataRequest:
+      required:
+      - AdvertiserId
       type: object
       properties:
-        TDID:
+        AdvertiserId:
+          type: string
+        DataProviderId:
           type:
           - string
           - 'null'
-          format: uuid
-        DataName:
+        Items:
           type:
-          - string
+          - array
           - 'null'
-        ErrorCode:
-          $ref: '#/components/schemas/AdvertiserDataResponseErrorCode'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
+          items:
+            $ref: '#/components/schemas/AdvertiserDataItem'
+        DataLoadTraceId:
           type:
           - string
           - 'null'
@@ -212,44 +253,3 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    AdvertiserDataRequest:
-      required:
-      - AdvertiserId
-      type: object
-      properties:
-        AdvertiserId:
-          type: string
-        DataProviderId:
-          type:
-          - string
-          - 'null'
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AdvertiserDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    AdvertiserDataResponseErrorCode:
-      enum:
-      - Unknown
-      - BaseBidCPMMetadataTooLong
-      - MissingUserId
-      - UserNotMapped
-      - Deprecated_MissingCookieMappingPartnerId
-      - InvalidBidFactor
-      - DataNameTooLong
-      - InvalidTtlInMinutes
-      - InvalidBaseBidCPM
-      - InvalidDataOwnerId
-      - InvalidParameterFormat
-      - TargetingDataCreationLimitExceeded
-      - TargetingDataCountLimitExceeded
-      - TenantRestrictionsExternalData
-      - TargetingDataDisabled
-      - ItemDeserializationError
-      type: string

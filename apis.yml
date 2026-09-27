@@ -130,13 +130,14 @@ apis:
   tags:
   - Identity
   - Privacy
-  - Open-Source
+  - Open Source
   - IAB Tech Lab
   tags_raw:
   - Identity
   - Privacy
   - Open Source
   - IAB Tech Lab
+  - Open-Source
   humanURL: https://unifiedid.com
   baseURL: https://prod.uidapi.com
   properties:
