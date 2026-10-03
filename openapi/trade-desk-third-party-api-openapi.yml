@@ -90,6 +90,32 @@ components:
           type: boolean
           default: false
       additionalProperties: false
+    ThirdPartyDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
+      additionalProperties: false
+    ThirdPartyDataResponseErrorCode:
+      enum:
+      - Unknown
+      - MissingUserId
+      - UserNotMapped
+      - DataNameTooLong
+      - UnauthorisedThirdPartyDataWithBaseBidCPM
+      - InvalidTtlInMinutes
+      - InvalidDataOwnerId
+      - InvalidParameterFormat
+      - TargetingDataCreationLimitExceeded
+      - TargetingDataCountLimitExceeded
+      - TenantRestrictionsExternalData
+      - TargetingDataDisabled
+      - ItemDeserializationError
+      type: string
     ThirdPartyDataServerResponseLine:
       type: object
       properties:
@@ -121,32 +147,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    ThirdPartyDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
-      additionalProperties: false
-    ThirdPartyDataResponseErrorCode:
-      enum:
-      - Unknown
-      - MissingUserId
-      - UserNotMapped
-      - DataNameTooLong
-      - UnauthorisedThirdPartyDataWithBaseBidCPM
-      - InvalidTtlInMinutes
-      - InvalidDataOwnerId
-      - InvalidParameterFormat
-      - TargetingDataCreationLimitExceeded
-      - TargetingDataCountLimitExceeded
-      - TenantRestrictionsExternalData
-      - TargetingDataDisabled
-      - ItemDeserializationError
-      type: string
     ThirdPartyDataItem:
       required:
       - Data

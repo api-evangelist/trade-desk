@@ -119,42 +119,6 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
-    IPAddressDataResponseErrorCode:
-      enum:
-      - Unknown
-      - MissingDataOwnerId
-      - DataOwnerIdNotMapped
-      - InvalidIPAddress
-      - InvalidIPAddressRange
-      - EuIpTargetingNotAllowedForPartner
-      - NotTargetable
-      type: string
-    IPAddressDataServerResponseLine:
-      type: object
-      properties:
-        DataName:
-          type:
-          - string
-          - 'null'
-        ErrorCode:
-          $ref: '#/components/schemas/IPAddressDataResponseErrorCode'
-        IPAddress:
-          type:
-          - string
-          - 'null'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     IPAddressData:
       required:
       - Name
@@ -284,20 +248,28 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    IPAddressDataRequest:
-      required:
-      - DataOwnerId
+    IPAddressDataServerResponseLine:
       type: object
       properties:
-        DataOwnerId:
-          type: string
-        Items:
+        DataName:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/IPAddressDataItem'
-        DataLoadTraceId:
+        ErrorCode:
+          $ref: '#/components/schemas/IPAddressDataResponseErrorCode'
+        IPAddress:
+          type:
+          - string
+          - 'null'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
           type:
           - string
           - 'null'
@@ -319,3 +291,31 @@ components:
           - 'null'
           format: int64
       additionalProperties: false
+    IPAddressDataRequest:
+      required:
+      - DataOwnerId
+      type: object
+      properties:
+        DataOwnerId:
+          type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IPAddressDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    IPAddressDataResponseErrorCode:
+      enum:
+      - Unknown
+      - MissingDataOwnerId
+      - DataOwnerIdNotMapped
+      - InvalidIPAddress
+      - InvalidIPAddressRange
+      - EuIpTargetingNotAllowedForPartner
+      - NotTargetable
+      type: string

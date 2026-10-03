@@ -69,6 +69,92 @@ paths:
       - url: https://offlineattrib.adsrvr.org
 components:
   schemas:
+    RealTimeConversionEventsPrivacySetting:
+      type: object
+      properties:
+        privacy_type:
+          type:
+          - string
+          - 'null'
+        is_applicable:
+          type:
+          - string
+          - 'null'
+        consent_string:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    RealTimeConversionEventLineItem:
+      type: object
+      properties:
+        item_code:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        qty:
+          type:
+          - string
+          - 'null'
+        price:
+          type:
+          - string
+          - 'null'
+        cat:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OfflineConversionDataResponseErrorCode:
+      enum:
+      - Unknown
+      - MissingOrInvalidTDIDAndImpressionId
+      - MissingOrInvalidTrackingTagId
+      - InvalidMerchantId
+      - ChinaPII
+      - InvalidTimestamp
+      - InvalidUserIdTypeOrUserId
+      - Unauthorized
+      - ItemDeserializationError
+      type: string
+    OfflineConversionDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OfflineConversionDataServerResponseLine'
+      additionalProperties: false
+    OfflineConversionDataRequest:
+      required:
+      - DataProviderId
+      type: object
+      properties:
+        DataProviderId:
+          type: string
+        UserIdArrayMetadataFormat:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OfflineConversionDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     OfflineConversionDataServerResponseLine:
       type: object
       properties:
@@ -104,92 +190,6 @@ components:
         OriginalRequest:
           $ref: '#/components/schemas/OfflineConversionDataItem'
       additionalProperties: false
-    RealTimeConversionEventLineItem:
-      type: object
-      properties:
-        item_code:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        qty:
-          type:
-          - string
-          - 'null'
-        price:
-          type:
-          - string
-          - 'null'
-        cat:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    RealTimeConversionEventsPrivacySetting:
-      type: object
-      properties:
-        privacy_type:
-          type:
-          - string
-          - 'null'
-        is_applicable:
-          type:
-          - string
-          - 'null'
-        consent_string:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    OfflineConversionDataRequest:
-      required:
-      - DataProviderId
-      type: object
-      properties:
-        DataProviderId:
-          type: string
-        UserIdArrayMetadataFormat:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OfflineConversionDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    OfflineConversionDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OfflineConversionDataServerResponseLine'
-      additionalProperties: false
-    OfflineConversionDataResponseErrorCode:
-      enum:
-      - Unknown
-      - MissingOrInvalidTDIDAndImpressionId
-      - MissingOrInvalidTrackingTagId
-      - InvalidMerchantId
-      - ChinaPII
-      - InvalidTimestamp
-      - InvalidUserIdTypeOrUserId
-      - Unauthorized
-      - ItemDeserializationError
-      type: string
     OfflineConversionDataItem:
       required:
       - TimestampUtc
