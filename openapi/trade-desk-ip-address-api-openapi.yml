@@ -119,6 +119,81 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
+    ExpandedIpAddress:
+      type: object
+      properties:
+        IPAddress:
+          type:
+          - string
+          - 'null'
+        IPAddressRange:
+          type:
+          - string
+          - 'null'
+        TargetingDataMetadataId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    IPAddressDataRequest:
+      required:
+      - DataOwnerId
+      type: object
+      properties:
+        DataOwnerId:
+          type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IPAddressDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    IPAddressDataServerResponse:
+      type: object
+      properties:
+        DataOwnerId:
+          type:
+          - string
+          - 'null'
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IPAddressDataServerResponseLine'
+      additionalProperties: false
+    IPAddressDataServerResponseLine:
+      type: object
+      properties:
+        DataName:
+          type:
+          - string
+          - 'null'
+        ErrorCode:
+          $ref: '#/components/schemas/IPAddressDataResponseErrorCode'
+        IPAddress:
+          type:
+          - string
+          - 'null'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     IPAddressData:
       required:
       - Name
@@ -159,20 +234,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/ExpandedIpAddress'
-      additionalProperties: false
-    IPAddressDataServerResponse:
-      type: object
-      properties:
-        DataOwnerId:
-          type:
-          - string
-          - 'null'
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IPAddressDataServerResponseLine'
       additionalProperties: false
     IPAddressDataItem:
       required:
@@ -244,67 +305,6 @@ components:
           items:
             $ref: '#/components/schemas/IPAddressData'
         CookieMappingPartnerId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    IPAddressDataServerResponseLine:
-      type: object
-      properties:
-        DataName:
-          type:
-          - string
-          - 'null'
-        ErrorCode:
-          $ref: '#/components/schemas/IPAddressDataResponseErrorCode'
-        IPAddress:
-          type:
-          - string
-          - 'null'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    ExpandedIpAddress:
-      type: object
-      properties:
-        IPAddress:
-          type:
-          - string
-          - 'null'
-        IPAddressRange:
-          type:
-          - string
-          - 'null'
-        TargetingDataMetadataId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-      additionalProperties: false
-    IPAddressDataRequest:
-      required:
-      - DataOwnerId
-      type: object
-      properties:
-        DataOwnerId:
-          type: string
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IPAddressDataItem'
-        DataLoadTraceId:
           type:
           - string
           - 'null'

@@ -69,28 +69,6 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
-    AdvertiserDataRequest:
-      required:
-      - AdvertiserId
-      type: object
-      properties:
-        AdvertiserId:
-          type: string
-        DataProviderId:
-          type:
-          - string
-          - 'null'
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AdvertiserDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     AdvertiserDataItem:
       required:
       - Data
@@ -165,6 +143,33 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    AdvertiserDataServerResponseLine:
+      type: object
+      properties:
+        TDID:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        DataName:
+          type:
+          - string
+          - 'null'
+        ErrorCode:
+          $ref: '#/components/schemas/AdvertiserDataResponseErrorCode'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     AdvertiserDataServerResponse:
       type: object
       properties:
@@ -174,6 +179,28 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/AdvertiserDataServerResponseLine'
+      additionalProperties: false
+    AdvertiserDataRequest:
+      required:
+      - AdvertiserId
+      type: object
+      properties:
+        AdvertiserId:
+          type: string
+        DataProviderId:
+          type:
+          - string
+          - 'null'
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AdvertiserDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     AdvertiserData:
       required:
@@ -226,30 +253,3 @@ components:
       - TargetingDataDisabled
       - ItemDeserializationError
       type: string
-    AdvertiserDataServerResponseLine:
-      type: object
-      properties:
-        TDID:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        DataName:
-          type:
-          - string
-          - 'null'
-        ErrorCode:
-          $ref: '#/components/schemas/AdvertiserDataResponseErrorCode'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
