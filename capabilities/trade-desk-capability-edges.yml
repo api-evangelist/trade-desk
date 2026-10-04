@@ -1,0 +1,25 @@
+slug: trade-desk
+provider: The Trade Desk
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: DeletionOptOut
+  spec_file: trade-desk-deletionoptout-api-openapi.yml
+  capability_id: BC-130.50
+  capability_id_l1: BC-130
+  capability_name: Privacy & Data Protection Management
+  confidence: 0.85
+  evidence: '''DataSubjectRequestAdvertiserData  Delete IDs shared with The Trade Desk for the specified
+    advertiser ID'', schemas AdvertiserDsrRequest, PartnerDsrRequestType, DsrErrorCode'
+  reason: Explicit data-subject-request (DSR) deletion/opt-out endpoints realise privacy and data protection
+    rights handling.

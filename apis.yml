@@ -421,6 +421,9 @@ apis:
   - type: GraphQL
     url: graphql/trade-desk-graphql.md
 common:
+- type: CapabilityMap
+  url: capabilities/trade-desk-capability-edges.yml
+  name: The Trade Desk Business Capability Map
 - type: Overlay
   url: overlays/trade-desk-ipaddress-api-overlay.yaml
 - type: TrustCenter
