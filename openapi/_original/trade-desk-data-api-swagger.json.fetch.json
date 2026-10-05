@@ -1,0 +1,12 @@
+{
+ "url": "https://offlineattrib.adsrvr.org/swagger/v1/swagger.json",
+ "requested_url": "https://offlineattrib.adsrvr.org/swagger/v1/swagger.json",
+ "status": 200,
+ "content_type": "application/json;charset=utf-8",
+ "bytes": 53084,
+ "sha256": "0668094a31bdc7ee1629d76a79a45ba8711c5c6301a3e6b2fd7968c3fdd66284",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
