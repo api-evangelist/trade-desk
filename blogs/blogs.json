@@ -2,6 +2,10 @@
   "repo": "trade-desk",
   "feeds": [
     {
+      "source": "https://www.thetradedesk.com/us/news-insights",
+      "error": "HTTPError"
+    },
+    {
       "source": "https://www.thetradedesk.com/us/news",
       "feed_url": "https://www.thetradedesk.com/us/news",
       "title": "",
@@ -10,7 +14,7 @@
     }
   ],
   "post_count": 3,
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "agent_pulled": "2026-06-27",
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
