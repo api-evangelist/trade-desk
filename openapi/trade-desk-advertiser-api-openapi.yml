@@ -69,6 +69,70 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
+    AdvertiserDataServerResponse:
+      type: object
+      properties:
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AdvertiserDataServerResponseLine'
+      additionalProperties: false
+    AdvertiserDataRequest:
+      required:
+      - AdvertiserId
+      type: object
+      properties:
+        AdvertiserId:
+          type: string
+        DataProviderId:
+          type:
+          - string
+          - 'null'
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AdvertiserDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AdvertiserData:
+      required:
+      - Name
+      type: object
+      properties:
+        Name:
+          type: string
+        TimestampUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        TtlInMinutes:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        BaseBidCPM:
+          type:
+          - number
+          - 'null'
+          format: double
+        BaseBidCPMMetadata:
+          type:
+          - string
+          - 'null'
+        BidFactor:
+          type:
+          - number
+          - 'null'
+          format: double
+      additionalProperties: false
     AdvertiserDataItem:
       required:
       - Data
@@ -169,70 +233,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    AdvertiserDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AdvertiserDataServerResponseLine'
-      additionalProperties: false
-    AdvertiserDataRequest:
-      required:
-      - AdvertiserId
-      type: object
-      properties:
-        AdvertiserId:
-          type: string
-        DataProviderId:
-          type:
-          - string
-          - 'null'
-        Items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AdvertiserDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    AdvertiserData:
-      required:
-      - Name
-      type: object
-      properties:
-        Name:
-          type: string
-        TimestampUtc:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        TtlInMinutes:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        BaseBidCPM:
-          type:
-          - number
-          - 'null'
-          format: double
-        BaseBidCPMMetadata:
-          type:
-          - string
-          - 'null'
-        BidFactor:
-          type:
-          - number
-          - 'null'
-          format: double
       additionalProperties: false
     AdvertiserDataResponseErrorCode:
       enum:

@@ -119,6 +119,20 @@ paths:
       - url: https://usw-data.adsrvr.org
 components:
   schemas:
+    IPAddressDataServerResponse:
+      type: object
+      properties:
+        DataOwnerId:
+          type:
+          - string
+          - 'null'
+        FailedLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IPAddressDataServerResponseLine'
+      additionalProperties: false
     ExpandedIpAddress:
       type: object
       properties:
@@ -153,87 +167,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    IPAddressDataServerResponse:
-      type: object
-      properties:
-        DataOwnerId:
-          type:
-          - string
-          - 'null'
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IPAddressDataServerResponseLine'
-      additionalProperties: false
-    IPAddressDataServerResponseLine:
-      type: object
-      properties:
-        DataName:
-          type:
-          - string
-          - 'null'
-        ErrorCode:
-          $ref: '#/components/schemas/IPAddressDataResponseErrorCode'
-        IPAddress:
-          type:
-          - string
-          - 'null'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    IPAddressData:
-      required:
-      - Name
-      type: object
-      properties:
-        Name:
-          type: string
-        TimestampUtc:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        TtlInMinutes:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        TargetingDataMetadataId:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        IPAddresses:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        IPAddressRanges:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        ExpandedIpAddresses:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ExpandedIpAddress'
       additionalProperties: false
     IPAddressDataItem:
       required:
@@ -319,3 +252,70 @@ components:
       - EuIpTargetingNotAllowedForPartner
       - NotTargetable
       type: string
+    IPAddressData:
+      required:
+      - Name
+      type: object
+      properties:
+        Name:
+          type: string
+        TimestampUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        TtlInMinutes:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        TargetingDataMetadataId:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        IPAddresses:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        IPAddressRanges:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        ExpandedIpAddresses:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ExpandedIpAddress'
+      additionalProperties: false
+    IPAddressDataServerResponseLine:
+      type: object
+      properties:
+        DataName:
+          type:
+          - string
+          - 'null'
+        ErrorCode:
+          $ref: '#/components/schemas/IPAddressDataResponseErrorCode'
+        IPAddress:
+          type:
+          - string
+          - 'null'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false

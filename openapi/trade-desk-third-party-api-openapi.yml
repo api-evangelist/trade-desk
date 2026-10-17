@@ -69,65 +69,6 @@ paths:
       - url: https://bulk-data.adsrvr.org
 components:
   schemas:
-    ThirdPartyData:
-      required:
-      - Name
-      type: object
-      properties:
-        Name:
-          type: string
-        TimestampUtc:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        TtlInMinutes:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
-    ThirdPartyDataServerResponse:
-      type: object
-      properties:
-        FailedLines:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
-      additionalProperties: false
-    ThirdPartyDataServerResponseLine:
-      type: object
-      properties:
-        DataProviderUserId:
-          type:
-          - string
-          - 'null'
-        TDID:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        DataName:
-          type:
-          - string
-          - 'null'
-        ErrorCode:
-          $ref: '#/components/schemas/ThirdPartyDataResponseErrorCode'
-        Message:
-          type:
-          - string
-          - 'null'
-        ItemNumber:
-          type:
-          - string
-          - 'null'
-        DataNumber:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     ThirdPartyDataResponseErrorCode:
       enum:
       - Unknown
@@ -144,26 +85,15 @@ components:
       - TargetingDataDisabled
       - ItemDeserializationError
       type: string
-    ThirdPartyDataRequest:
-      required:
-      - DataProviderId
+    ThirdPartyDataServerResponse:
       type: object
       properties:
-        DataProviderId:
-          type: string
-        Items:
+        FailedLines:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/ThirdPartyDataItem'
-        DataLoadTraceId:
-          type:
-          - string
-          - 'null'
-        IsUserIdAlreadyHashed:
-          type: boolean
-          default: false
+            $ref: '#/components/schemas/ThirdPartyDataServerResponseLine'
       additionalProperties: false
     ThirdPartyDataItem:
       required:
@@ -242,4 +172,74 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    ThirdPartyDataRequest:
+      required:
+      - DataProviderId
+      type: object
+      properties:
+        DataProviderId:
+          type: string
+        Items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThirdPartyDataItem'
+        DataLoadTraceId:
+          type:
+          - string
+          - 'null'
+        IsUserIdAlreadyHashed:
+          type: boolean
+          default: false
+      additionalProperties: false
+    ThirdPartyDataServerResponseLine:
+      type: object
+      properties:
+        DataProviderUserId:
+          type:
+          - string
+          - 'null'
+        TDID:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        DataName:
+          type:
+          - string
+          - 'null'
+        ErrorCode:
+          $ref: '#/components/schemas/ThirdPartyDataResponseErrorCode'
+        Message:
+          type:
+          - string
+          - 'null'
+        ItemNumber:
+          type:
+          - string
+          - 'null'
+        DataNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ThirdPartyData:
+      required:
+      - Name
+      type: object
+      properties:
+        Name:
+          type: string
+        TimestampUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        TtlInMinutes:
+          type:
+          - integer
+          - 'null'
+          format: int32
       additionalProperties: false
