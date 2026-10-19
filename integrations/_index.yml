@@ -101,3 +101,64 @@
     builder: Fivetran
   status: not-a-workflow
   arazzo: null
+- slug: trade-desk-go-module-proxy
+  label: Go module proxy
+  partner_name: Go module proxy
+  category: official SDK (Go)
+  type: register
+  channel: package-registry
+  evidence: https://pkg.go.dev/github.com/TheTradeDesk/ttd-workflows-go
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Go module proxy (public registry JSON)
+    spec_file: null
+    language: Go
+    packages:
+    - name: github.com/TheTradeDesk/ttd-workflows-go
+      version: v0.13.2
+      released: '2026-04-24'
+      released_field: Time
+      lapsed: false
+      page: https://pkg.go.dev/github.com/TheTradeDesk/ttd-workflows-go
+      repo_leg: github-org:thetradedesk
+      publisher_leg: org:thetradedesk
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
+- slug: trade-desk-maven-central
+  label: Maven Central
+  partner: maven-central
+  partner_name: Maven Central
+  category: official SDK (Java/JVM)
+  type: register
+  channel: package-registry
+  evidence: https://central.sonatype.com/artifact/com.thetradedesk/workflows
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Maven Central (public registry JSON)
+    spec_file: null
+    language: Java/JVM
+    packages:
+    - name: com.thetradedesk:workflows
+      version: 0.13.2
+      released: '2026-04-24'
+      released_field: lastUpdated
+      lapsed: false
+      page: https://central.sonatype.com/artifact/com.thetradedesk/workflows
+      repo_leg: github-org:thetradedesk
+      publisher_leg: groupId:thetradedesk.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
