@@ -20,6 +20,10 @@ checked:
 - https://www.peeringdb.com/api/net
 - https://app.snowflake.com/marketplace/providers
 - https://marketplace.databricks.com/
+- https://hubgloo.opxar.com/search
+- https://www.tagtoday.net/certifications
+- https://www.tagtoday.net/registry
+- https://www.tagtoday.net/registry-search/
 marketplace_apps: []
 edges:
 - partner_name: IAB Europe TCF Global Vendor List
@@ -274,6 +278,37 @@ edges:
     identity_note: wikidata P856 thetradedesk.com for 'The Trade Desk' (labelled identity step)
   detected_by: sweep-data-marketplaces.py
   detected: '2026-10-20'
+- partner_name: TAG Registry (Trustworthy Accountability Group)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.tagtoday.net/registry
+  category: Ad fraud / brand safety certification (TAG)
+  contract_reference:
+    register: TAG Registry (tagtoday.net/registry; registry-search public endpoint)
+    spec_file: null
+    standard: TAG certification programs (Trustworthy Accountability Group)
+    role: tag-registered
+    registrations:
+    - registered_name: The Trade Desk
+      register_id: https://hubgloo.opxar.com/company/52831623996
+      verified_by_tag: true
+      seals: []
+      matched_domain: thetradedesk.com
+      matched_by: domain
+      identity: wikidata Q60744565 'Trade Desk' P856 http://www.thetradedesk.com/
+    signal_note: certified_products = one entry per TAG seal held (CAF, BSC, CAM, CAP, CFT), never per registration;
+      validation route (third-party auditor / TAG Validation / self-attestation) and category are context. The registry
+      shows current seals only and marks none expired, so lapsed is false. Verified by TAG with no seal = listing
+      only (participation)
+    detected_by: sweep-tag-certified-ad-fraud.py
+    detected: '2026-10-23'
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  detected_by: sweep-tag-certified-ad-fraud.py
+  first_seen: '2026-10-23'
 source:
 - https://fivetran.com/docs/activations/destinations/available-destinations/trade-desk
 - https://hightouch.com/docs/destinations/tradedesk
