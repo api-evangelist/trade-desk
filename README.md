@@ -1,4 +1,4 @@
-# The Trade Desk (trade-desk)
+# The Trade Desk
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,213 +66,165 @@
 
 The Trade Desk is an independent, omnichannel demand-side platform (DSP) for programmatic advertising, headquartered in Ventura, California. Its cloud-based platform — Kokai (the current flagship, succeeding Solimar) — lets agencies, brands, and trading desks buy and optimize digital ad inventory across connected TV (CTV), audio, mobile, video, native, display, and digital out-of-home. The Trade Desk positions itself as the buy-side counterweight to the walled gardens by championing the open internet through OpenPath (direct publisher integrations that bypass SSPs) and Unified ID 2.0 (UID2), an open-source, deterministic identity framework governed by the IAB Tech Lab. The company also stewards EUID (UID2's European equivalent), the Galileo first-party data activation framework, and Koa — its in-platform AI used for forecasting, bidding optimization, and audience modeling. Programmatic developers integrate via the TTD Workflows API (REST + GraphQL for campaign, ad group, and creative management), the Data API (advertiser/third-party data ingestion, offline conversions, deletion/opt-out), the Real-Time Conversion Events API (RTCE), and the OpenSincera data-quality APIs (acquired May 2024). Official SDKs are published in Python, Go, and Java and are Speakeasy-generated from OpenAPI specs. Most documentation lives behind the Partner Portal (partner.thetradedesk.com) but a public docs surface is exposed at open.thetradedesk.com. The Trade Desk is publicly traded (NASDAQ: TTD).
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/trade-desk/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/trade-desk/refs/heads/main/apis.yml)
+**Areas:** Advertising · Programmatic Advertising · DSP · AdTech · Connected TV · CTV · Identity · Unified ID 2.0 · UID2 · OpenPath · Kokai · Koa AI
 
-## Scope
+## The Trade Desk on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for The Trade Desk is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/trade-desk/](https://apis.io/providers/trade-desk/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (11)
 
-- Advertising
-- Programmatic Advertising
-- Demand-Side Platform
-- DSP
-- AdTech
-- Connected TV
-- CTV
-- Identity
-- Unified ID 2.0
-- UID2
-- OpenPath
-- Kokai
-- Koa AI
-- Galileo
-- Sincera
-- Open Internet
-- Real-Time Bidding
-- Open Measurement
+- [The Trade Desk Platform API](https://apis.io/apis/trade-desk/trade-desk-platform-api/) — The original REST Platform API covering advertisers, campaigns, ad groups, creatives, targeting data, reporting, and audience operations. Documentation is…
+- [The Trade Desk Real-Time Conversion Events API](https://apis.io/apis/trade-desk/trade-desk-realtime-conversion-events-api/) — Server-side and client-side conversion event ingestion (Apache 2.0 Google Tag Manager templates) for capturing high-fidelity attribution signals in a…
+- [Unified ID 2.0 (UID2)](https://apis.io/apis/trade-desk/trade-desk-uid2-api/) — Unified ID 2.0 is an open-source, deterministic identity framework seeded by The Trade Desk and now governed by the IAB Tech Lab. UID2 resolves hashed email…
+- [OpenSincera API](https://apis.io/apis/trade-desk/trade-desk-opensincera-api/) — OpenSincera (from the May 2024 Sincera acquisition) provides programmatic supply-side transparency data — ad slot quality, page attributes, viewability…
+- [The Trade Desk Advertiser API](https://apis.io/apis/trade-desk/trade-desk-advertiser-api/) — The Advertiser API from The Trade Desk — 1 operation(s) for advertiser.
+- [The Trade Desk DeletionOptOut API](https://apis.io/apis/trade-desk/trade-desk-deletionoptout-api/) — The DeletionOptOut API from The Trade Desk — 3 operation(s) for deletionoptout.
+- [The Trade Desk OfflineConversion API](https://apis.io/apis/trade-desk/trade-desk-offlineconversion-api/) — The OfflineConversion API from The Trade Desk — 1 operation(s) for offlineconversion.
+- [The Trade Desk Real-Time Conversions API](https://apis.io/apis/trade-desk/the-trade-desk-real-time-conversions-api/) — The Trade Desk Real-Time Conversions API (formerly the Real-Time Conversion Events API) allows advertisers to send conversion events server-side in real…
+- [The Trade Desk Reporting API](https://apis.io/apis/trade-desk/the-trade-desk-reporting-api/) — The Trade Desk Reporting API provides programmatic access to campaign performance data including impressions, clicks, conversions, spend, win rates,…
+- [The Trade Desk IP Address API](https://apis.io/apis/trade-desk/trade-desk-ip-address-api/) — The IP Address API from The Trade Desk — 2 operation(s) for ip address.
+- [The Trade Desk Third Party API](https://apis.io/apis/trade-desk/trade-desk-third-party-api/) — The Third Party API from The Trade Desk — 1 operation(s) for third party.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### GraphQL (1)
 
-### The Trade Desk Data API
+GraphQL schemas.
 
-Ingest first-party advertiser audience data, third-party provider audience data, and offline conversions (CAPI-style), and submit data-subject deletion / opt-out requests across advertiser, merchant, and provider contexts. The Data API powers audience targeting and offline-to-online measurement and supports UID2 identity mapping.
+- [The Trade Desk GraphQL API](https://apis.io/graphqls/trade-desk/trade-desk-graphql/)
 
-- **Human URL:** [https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data)
+#### MCP servers (1)
 
-#### Tags
+Model Context Protocol servers that expose the API to agents.
 
-- Advertising
-- Data
-- Audience
-- Conversions
-- Privacy
+- [Open Agentic Kit (OAK)](https://apis.io/servers/trade-desk/open-agentic-kit-oak/)
 
-#### Properties
+#### Agentic access (1)
 
-- [Documentation](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-data-advertiser-firstparty)
-- [Documentation](https://open.thetradedesk.com/provider/docsApp/GuidesProvider/audience/doc/post-data-thirdparty)
-- [Documentation](https://open.thetradedesk.com/advertiser/docsApp/GuidesAdvertiser/data/doc/post-providerapi-offlineconversion)
-- [OpenAPI](openapi/trade-desk-data-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/trade-desk-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/trade-desk-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [SDK](https://github.com/TheTradeDesk/ttd-data-python)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### The Trade Desk Workflows API
+- [Trade Desk Agentic Access](https://apis.io/agentic-access/trade-desk/trade-desk-agentic-access/)
 
-The Workflows API exposes the high-level campaign, ad group, creative, and bulk-job operations that previously required navigating the legacy Platform API. It blends REST and GraphQL surfaces (including a generic GraphQL passthrough and bulk query jobs) and is the recommended modern integration path for new partners.
+#### Collections (6)
 
-- **Human URL:** [https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview](https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview)
+Postman and Open Collection request collections.
 
-#### Tags
+- [TTD Data Advertiser API](https://apis.io/collections/trade-desk/open-trade-desk-advertiser-api/)
+- [TTD Data API](https://apis.io/collections/trade-desk/open-trade-desk-data-api/)
+- [TTD Data Advertiser DeletionOptOut API](https://apis.io/collections/trade-desk/open-trade-desk-deletionoptout-api/)
+- [TTD Data IPAddress API](https://apis.io/collections/trade-desk/open-trade-desk-ipaddress-api/)
+- [TTD Data Advertiser OfflineConversion API](https://apis.io/collections/trade-desk/open-trade-desk-offlineconversion-api/)
+- [TTD Data Advertiser ThirdParty API](https://apis.io/collections/trade-desk/open-trade-desk-thirdparty-api/)
 
-- Advertising
-- Campaigns
-- Ad Groups
-- GraphQL
-- REST
+#### Overlays (5)
 
-#### Properties
+OpenAPI overlays, including conversational phrasing for each operation.
 
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview)
-- [Getting Started](https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted)
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform)
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUseCases)
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines)
-- [OpenAPI](https://api.thetradedesk.com/workflows/swagger/v1/swagger.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [SDK](https://github.com/TheTradeDesk/ttd-workflows-python)
-- [SDK](https://github.com/TheTradeDesk/ttd-workflows-go)
-- [SDK](https://github.com/TheTradeDesk/ttd-workflows-java)
-- [Postman Collection](collections/trade-desk-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/trade-desk-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Trade Desk Advertiser Api Overlay](https://apis.io/overlays/trade-desk/trade-desk-advertiser-api-overlay/)
+- [Trade Desk Deletionoptout Api Overlay](https://apis.io/overlays/trade-desk/trade-desk-deletionoptout-api-overlay/)
+- [Trade Desk Ipaddress Api Overlay](https://apis.io/overlays/trade-desk/trade-desk-ipaddress-api-overlay/)
+- [Trade Desk Offlineconversion Api Overlay](https://apis.io/overlays/trade-desk/trade-desk-offlineconversion-api-overlay/)
+- [Trade Desk Thirdparty Api Overlay](https://apis.io/overlays/trade-desk/trade-desk-thirdparty-api-overlay/)
 
-### The Trade Desk Platform API
+#### Security (4)
 
-The original REST Platform API covering advertisers, campaigns, ad groups, creatives, targeting data, reporting, and audience operations. Documentation is gated behind the TTD Partner Portal. New integrations are generally steered to the Workflows API; Platform remains the reference for low-level objects and reporting endpoints.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform)
+- [Trade Desk Authentication](https://apis.io/security/trade-desk/trade-desk-authentication/)
+- [Trade Desk Domain Security](https://apis.io/security/trade-desk/trade-desk-domain-security/)
+- [Trade Desk Trust Center](https://apis.io/security/trade-desk/trade-desk-trust-center/)
+- [Trade Desk Vulnerability Disclosure](https://apis.io/security/trade-desk/trade-desk-vulnerability-disclosure/)
 
-#### Tags
+#### OAuth scopes (1)
 
-- Advertising
-- Campaigns
-- REST
-- Reporting
+The permissions the API asks for.
 
-#### Properties
+- [Trade Desk Scopes](https://apis.io/scopes/trade-desk/trade-desk-scopes/)
 
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform)
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/overview)
-- [Documentation](https://partner.thetradedesk.com/v3/portal/api/doc/ApiUsageGuidelines)
-- [Code Examples](https://github.com/TheTradeDesk/Platform)
-- [Postman Collection](collections/trade-desk-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/trade-desk-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-### The Trade Desk Real-Time Conversion Events API
+Published plans, tiers and prices.
 
-Server-side and client-side conversion event ingestion (Apache 2.0 Google Tag Manager templates) for capturing high-fidelity attribution signals in a cookie-deprecated environment. Pairs with UID2 for identity resolution.
+- [Trade Desk Plans Pricing](https://apis.io/plans/trade-desk/trade-desk-plans-pricing/)
 
-- **Human URL:** [https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview](https://partner.thetradedesk.com/v3/portal/api/doc/ApiOverview)
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Advertising
-- Conversions
-- Measurement
-- Server-Side
+- [Trade Desk Rate Limits](https://apis.io/rate-limits/trade-desk/trade-desk-rate-limits/)
 
-#### Properties
+## Where to find this API
 
-- [SDK](https://github.com/TheTradeDesk/conversion-events-sdk-for-googletagmanager)
-- [SDK](https://github.com/TheTradeDesk/conversion-events-server-side-googletagmanager)
-- [Postman Collection](collections/trade-desk-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/trade-desk-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Unified ID 2.0 (UID2)
-
-Unified ID 2.0 is an open-source, deterministic identity framework seeded by The Trade Desk and now governed by the IAB Tech Lab. UID2 resolves hashed email addresses and phone numbers into rotating tokens that publishers, DSPs, SSPs, and measurement vendors can use for addressable advertising without third-party cookies. The EUID variant provides a GDPR-aligned European deployment.
-
-- **Human URL:** [https://unifiedid.com](https://unifiedid.com)
-
-#### Tags
-
-- Identity
-- Privacy
-- Open Source
-- IAB Tech Lab
-
-#### Properties
-
-- [Portal](https://unifiedid.com)
-- [Documentation](https://unifiedid.com/docs/intro)
-- [Documentation](https://github.com/IABTechLab/uid2docs)
-- [SDK](https://github.com/IABTechLab/uid2-operator)
-- [Postman Collection](collections/trade-desk-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/trade-desk-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### OpenSincera API
-
-OpenSincera (from the May 2024 Sincera acquisition) provides programmatic supply-side transparency data — ad slot quality, page attributes, viewability metadata, supply-path metrics — to help buyers value impressions and audit inventory.
-
-- **Human URL:** [https://partner.thetradedesk.com/v3/portal/opensincera/overview](https://partner.thetradedesk.com/v3/portal/opensincera/overview)
-
-#### Tags
-
-- Advertising
-- Data Quality
-- Supply Path
-- Transparency
-
-#### Properties
-
-- [Documentation](https://partner.thetradedesk.com/v3/portal/opensincera/overview)
-- [Postman Collection](collections/trade-desk-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/trade-desk-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.thetradedesk.com)
-- [Portal](https://www.thetradedesk.com/us)
 - [Documentation](https://open.thetradedesk.com)
-- [Documentation](https://partner.thetradedesk.com)
-- [Getting Started](https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted)
-- [Product](https://www.thetradedesk.com/us/our-platform)
-- [Product](https://www.thetradedesk.com/us/our-platform/dsp-demand-side-platform)
-- [Product](https://www.thetradedesk.com/us/openpath)
-- [Product](https://www.thetradedesk.com/us/our-platform/koa-ai-artificial-intelligence)
-- [Product](https://www.thetradedesk.com/us/news/introducing-galileo)
-- [Identity](https://unifiedid.com)
-- [Identity](https://euid.eu)
-- [GitHub Organization](https://github.com/TheTradeDesk)
-- [GitHub Organization](https://github.com/IABTechLab)
-- [SDK](https://github.com/TheTradeDesk/ttd-workflows-python)
-- [SDK](https://github.com/TheTradeDesk/ttd-workflows-go)
-- [SDK](https://github.com/TheTradeDesk/ttd-workflows-java)
-- [SDK](https://github.com/TheTradeDesk/ttd-data-python)
-- [SDK](https://github.com/TheTradeDesk/ttd-databricks-python)
-- [Code Examples](https://github.com/TheTradeDesk/Platform)
-- [Press Room](https://www.thetradedesk.com/us/news)
+- [Getting started](https://partner.thetradedesk.com/v3/portal/api/doc/ApiPlatformGetStarted)
+- [API reference](https://partner.thetradedesk.com/v3/portal/api/doc/ApiReferencePlatform)
+- [Sign up](https://open.sincera.io/sign_up)
+- [Support](https://open.thetradedesk.com/contact-us)
 - [Blog](https://www.thetradedesk.com/us/news-insights)
-- [Newsroom](https://www.thetradedesk.com/us/press-room)
-- [About Us](https://www.thetradedesk.com/us/about-us)
-- [Careers](https://careers.thetradedesk.com)
-- [Investor Relations](https://investors.thetradedesk.com)
-- [Terms of Service](https://www.thetradedesk.com/us/website-privacy-policy)
-- [Privacy Policy](https://www.thetradedesk.com/us/website-privacy-policy)
-- [Contact](https://www.thetradedesk.com/us/contact-us)
-- [LinkedIn](https://www.linkedin.com/company/the-trade-desk)
-- [Twitter](https://twitter.com/thetradedesk)
-- [YouTube](https://www.youtube.com/@thetradedesk)
+- [Security](https://www.thetradedesk.com/trust/report-a-vulnerability)
+- [Compliance](https://www.thetradedesk.com/trust/security)
+- [Trust centre](https://www.thetradedesk.com/trust)
+- [Terms of service](https://www.thetradedesk.com/legal/trade-desk-advertising-terms-4-7-26)
+- [Privacy policy](https://www.thetradedesk.com/legal/website-privacy-policy)
+- [GitHub](https://github.com/TheTradeDesk)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 55.1** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.8 |
+| Contract quality | 40.1 |
+| Contract governance | 18.2 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 80.4 |
+| Access clarity | 50.0 |
+
+**Agent readiness 44.2** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 45.1** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/trade-desk/](https://apis.io/providers/trade-desk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for The Trade Desk: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/trade-desk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
